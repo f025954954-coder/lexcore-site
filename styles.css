@@ -248,6 +248,32 @@ footer .logo small{color:#8fb3ad}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.show{opacity:1;transform:none}
 
+/* ===== articles / blog ===== */
+.art{max-width:760px;margin:0 auto;padding:6px 0 20px}
+.art .lead{font-size:19px;color:var(--muted);margin-bottom:22px}
+.art h2{font-size:26px;font-weight:800;margin:36px 0 12px;color:var(--txt)}
+.art h3{font-size:20px;font-weight:700;margin:26px 0 8px;color:var(--txt)}
+.art p{font-size:17px;color:#33474d;margin-bottom:16px;line-height:1.9}
+.art ul,.art ol{margin:6px 26px 18px;display:flex;flex-direction:column;gap:9px}
+.art li{font-size:16.5px;color:#33474d;line-height:1.75}
+.art li b,.art p b{color:var(--txt)}
+.art a.inl{color:var(--teal-d);font-weight:600;border-bottom:1px solid var(--line2)}
+.art blockquote{border-right:3px solid var(--teal);background:var(--bg-alt);padding:14px 18px;border-radius:10px;margin:20px 0;color:#334;font-size:17px}
+.art .cta-inline{background:linear-gradient(135deg,#0d9488,#0f766e);color:#fff;border-radius:18px;padding:28px;text-align:center;margin:34px 0}
+.art .cta-inline h4{color:#fff;font-size:21px;margin-bottom:8px;font-weight:800}
+.art .cta-inline p{color:rgba(255,255,255,.92);margin-bottom:18px;font-size:16px}
+.art .cta-inline a{background:#fff;color:var(--teal-d);padding:11px 24px;border-radius:12px;font-weight:700;display:inline-block}
+.art-meta{color:var(--soft);font-size:14px;margin-bottom:8px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.blog-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.blog-card .top{height:120px;background:linear-gradient(135deg,#0d9488,#0f766e);display:grid;place-items:center;font-size:44px}
+.blog-card .cbody{padding:22px;flex:1;display:flex;flex-direction:column}
+.blog-card h3{font-size:18px;font-weight:700;margin-bottom:8px;color:var(--txt)}
+.blog-card p{color:var(--muted);font-size:14.5px;flex:1}
+.blog-card .rd{color:var(--teal-d);font-weight:700;font-size:14px;margin-top:14px}
+
 /* ===== floating chat + FAB ===== */
 .fab{position:fixed;bottom:22px;left:22px;z-index:120;display:flex;flex-direction:column;gap:12px;align-items:center}
 .fab-btn{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:22px;cursor:pointer;border:none;box-shadow:0 10px 26px rgba(15,42,46,.22);transition:transform .2s;position:relative;text-decoration:none}
