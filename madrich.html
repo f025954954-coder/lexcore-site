@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מדריך שימוש · לקסקור</title>
+<meta name="description" content="מדריך השימוש המלא של לקסקור — עשרות עמודים, צילומי מסך ממחישים וקריינות קולית, על כל מודול במערכת מההתחלה ועד הפרט הקטן.">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#080d17;--bg2:#0b1220;--card:#111a2c;--card2:#0e1626;
+  --line:rgba(255,255,255,.08);--line2:rgba(96,143,214,.26);
+  --txt:#eef2f9;--muted:#97a6bd;
+  --blue:#5b90d6;--blue2:#8fb4e4;--gold:#c6a35f;--gold2:#e0c68c;
+  --grad:linear-gradient(120deg,#3d6fb2 0%,#5b90d6 55%,#8fb4e4 100%);
+  --shadow:0 20px 60px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI','Heebo',system-ui,-apple-system,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.8;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Frank Ruhl Libre','Times New Roman',Georgia,serif}
+a{color:inherit;text-decoration:none}
+.aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aura span{position:absolute;border-radius:50%;filter:blur(120px);opacity:.32}
+.aura span:nth-child(1){width:560px;height:560px;background:#1c3a63;top:-160px;right:-100px}
+.aura span:nth-child(2){width:480px;height:480px;background:#5c4d28;bottom:-180px;left:-120px;opacity:.15}
+#bar{position:fixed;top:0;right:0;height:3px;background:var(--grad);width:0;z-index:100;transition:width .4s}
+
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(8,13,23,.82);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:0 auto;padding:0 22px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:20px}
+.logo .m{width:36px;height:36px;border-radius:11px;background:var(--grad);display:grid;place-items:center;color:#fff;font-size:17px}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:-3px}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);border:1px solid var(--line);padding:9px 16px;border-radius:11px;transition:background .2s}
+.back:hover{background:rgba(255,255,255,.06);color:var(--txt)}
+
+.hero{position:relative;z-index:1;text-align:center;padding:48px 22px 22px;max-width:840px;margin:0 auto}
+.hero .eb{color:var(--blue);font-weight:700;letter-spacing:2px;font-size:13px;margin-bottom:12px}
+.hero h1{font-size:clamp(28px,5vw,44px);font-weight:900;margin-bottom:10px}
+.hero p{color:var(--muted);font-size:16px}
+
+.layout{position:relative;z-index:1;max-width:1180px;margin:16px auto 0;padding:0 22px 60px;display:grid;grid-template-columns:264px 1fr;gap:28px;align-items:start}
+.toc{position:sticky;top:88px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;max-height:calc(100vh - 108px);overflow:auto}
+.toc h4{font-family:'Segoe UI',sans-serif;font-size:12px;color:var(--muted);letter-spacing:1px;padding:6px 10px 10px}
+.toc a{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;border-radius:8px;color:var(--muted);font-size:13px;transition:.2s;margin-bottom:1px}
+.toc a .n{width:20px;height:20px;border-radius:5px;background:rgba(255,255,255,.06);display:grid;place-items:center;font-size:10.5px;font-weight:700;flex:0 0 20px}
+.toc a:hover{background:rgba(255,255,255,.05);color:var(--txt)}
+.toc a.on{background:rgba(91,144,214,.14);color:var(--txt)}
+.toc a.on .n{background:var(--grad);color:#fff}
+
+.main{min-width:0}
+.mobsel{display:none;margin-bottom:14px}
+.mobsel select{width:100%;background:var(--card);color:var(--txt);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;font-size:15px;font-family:inherit}
+.page{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 32px;box-shadow:var(--shadow);animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.ptop{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.pbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(198,163,95,.12);border:1px solid rgba(198,163,95,.3);color:var(--gold2);font-size:12.5px;font-weight:700;padding:5px 13px;border-radius:999px}
+.speak{margin-right:auto;display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:#fff;border:none;padding:9px 16px;border-radius:11px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;transition:transform .2s}
+.speak:hover{transform:translateY(-1px)}
+.speak.playing{background:#c0563f}
+.page h2{font-size:clamp(24px,3.6vw,33px);font-weight:900;margin-bottom:14px;line-height:1.25}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr}}
+.ptext p{color:#cdd6e6;font-size:15.5px;margin-bottom:10px}
+.ptext h3{font-family:'Segoe UI',sans-serif;font-size:16px;color:var(--txt);margin:18px 0 7px;display:flex;align-items:center;gap:8px}
+.ptext h3::before{content:'▸';color:var(--blue2)}
+.ptext ol,.ptext ul{margin:6px 24px 12px;display:flex;flex-direction:column;gap:8px}
+.ptext li{color:var(--muted);font-size:15px}.ptext li b{color:#dbe3f0}
+.tip{margin-top:16px;background:rgba(198,163,95,.09);border:1px solid rgba(198,163,95,.28);border-radius:11px;padding:12px 15px;font-size:14.5px;color:var(--gold2)}
+.tip b{color:var(--gold2)}
+
+/* mock screenshot */
+.shot{border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#0f1728,#0b1220);overflow:hidden;box-shadow:var(--shadow);position:sticky;top:88px}
+.sbar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.sbar i{width:9px;height:9px;border-radius:50%}
+.sbar .r{background:#ff5f57}.sbar .y{background:#febc2e}.sbar .g{background:#28c840}
+.sbar .ad{margin-right:12px;font-size:11px;color:var(--muted);background:rgba(0,0,0,.32);padding:4px 11px;border-radius:7px;flex:1;text-align:center}
+.sbody{padding:14px}
+.sh4{font-family:'Segoe UI',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.sh4 .pill{font-size:10.5px;color:var(--muted);background:rgba(255,255,255,.05);padding:4px 9px;border-radius:7px;font-weight:500}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:11px}
+.kpi{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:9px}
+.kpi .n{font-size:16px;font-weight:800;color:var(--blue2)}.kpi .l{font-size:10px;color:var(--muted)}
+.row{display:flex;align-items:center;gap:9px;padding:9px 11px;background:var(--card2);border:1px solid var(--line);border-radius:9px;margin-bottom:6px;font-size:12px}
+.row .ic{width:22px;height:22px;border-radius:6px;background:rgba(91,144,214,.18);display:grid;place-items:center;font-size:11px;flex:0 0 22px}
+.tag{margin-right:auto;font-size:10px;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.tag.ok{background:rgba(91,144,214,.18);color:var(--blue2)}
+.tag.gold{background:rgba(198,163,95,.16);color:var(--gold2)}
+.hl{position:relative}
+.hl::after{content:'';position:absolute;inset:-2px;border:2px solid var(--gold);border-radius:9px;animation:pulse 1.6s infinite;pointer-events:none}
+@keyframes pulse{0%,100%{opacity:.9}50%{opacity:.25}}
+.fld{display:flex;flex-direction:column;gap:5px}
+.fld .f{background:#f4f2ec;border:1px solid #cdd3df;border-radius:7px;padding:7px 9px;font-size:11px;color:#243}
+.fld .f b{color:#1c4f7a}
+.fld .f.hot{border-color:var(--gold);box-shadow:0 0 0 2px rgba(198,163,95,.22)}
+.btnm{margin-top:9px;background:var(--grad);color:#fff;text-align:center;padding:8px;border-radius:9px;font-size:12px;font-weight:700}
+.phone{width:172px;margin:4px auto;border:8px solid #16233a;border-radius:26px;background:#0b1220;overflow:hidden}
+.phone .t{height:16px;background:#16233a}
+.phone .s{padding:11px}
+.phone .d{background:#fff;border-radius:7px;padding:9px;color:#243}
+.phone .d .h{height:7px;width:55%;background:#1c4f7a;border-radius:4px;margin-bottom:6px}
+.phone .d .l{height:5px;background:#d4dae4;border-radius:4px;margin-bottom:4px}.phone .d .l.s{width:70%}
+.phone .sg{margin-top:9px;border:2px dashed var(--blue);border-radius:8px;height:38px;display:grid;place-items:center;color:var(--blue2);font-size:10.5px}
+.cbar{background:#22314a;padding:6px 10px;display:flex;gap:6px;align-items:center}
+.cbar .u{flex:1;background:#0e1626;border-radius:11px;padding:4px 10px;font-size:10px;color:#9fb2d0}
+.cpage{background:#eef1f6;padding:12px;color:#333;position:relative;min-height:120px}
+.gov{background:#fff;border:1px solid #d7dbe5;border-radius:6px;padding:10px}
+.gov .gt{font-size:11px;font-weight:700;color:#123;border-bottom:1px solid #123;padding-bottom:5px;margin-bottom:8px}
+.gov .gr{display:flex;gap:5px;margin-bottom:6px}
+.gov .gf{flex:1;border:1px solid #cdd3df;border-radius:5px;padding:4px 6px;font-size:9.5px;background:#fbfcfe}
+.gov .gf .k{font-size:8px;color:#889;display:block}.gov .gf .v{font-weight:700;color:#7a1f5c}
+.gov .gf.hot{border-color:var(--blue);box-shadow:0 0 0 2px rgba(91,144,214,.25)}
+.pop{position:absolute;top:10px;left:10px;width:150px;background:#111a2c;border:1px solid var(--line2);border-radius:10px;padding:10px}
+.pop .ph{font-size:11px;font-weight:700;margin-bottom:7px;display:flex;gap:7px;align-items:center}
+.pop .ph .d{width:18px;height:18px;border-radius:5px;background:var(--grad);display:grid;place-items:center;font-size:10px}
+.pop .pr{display:flex;justify-content:space-between;font-size:9.5px;color:var(--muted);padding:3px 0;border-bottom:1px solid var(--line)}
+.pop .pr b{color:var(--blue2)}
+.pop .pb{margin-top:7px;background:var(--grad);color:#fff;text-align:center;padding:6px;border-radius:7px;font-size:10.5px;font-weight:700}
+.tpane{background:#f2f3f7;border-radius:10px;overflow:hidden;color:#2c3e50;font-size:11px}
+.tpane .th{background:linear-gradient(135deg,#294e7d,#1e3a63);color:#fff;padding:9px 11px;font-weight:600;font-size:12px;display:flex;gap:7px;align-items:center}
+.tpane .tb{padding:11px}
+.tpane .tr{margin-bottom:7px}
+.tpane .tr label{display:block;color:#5b6577;font-size:10px;margin-bottom:2px}
+.tpane .ti{background:#fff;border:1px solid #d4d8e2;border-radius:5px;padding:5px 7px;font-size:11px}
+.tpane .tok{margin-top:8px;background:#294e7d;color:#fff;text-align:center;padding:7px;border-radius:6px;font-weight:600}
+.chat{display:flex;gap:8px;margin-bottom:9px;align-items:flex-start}
+.chat .ci{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:12px;flex:0 0 26px;background:rgba(91,144,214,.18)}
+.chat .cb{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:8px 11px;font-size:11.5px;max-width:84%}
+.chat.out{flex-direction:row-reverse}.chat.out .cb{background:var(--grad);color:#fff;border:none}
+
+.pager{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px}
+.pbtn{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line2);color:var(--txt);padding:12px 20px;border-radius:12px;font-size:14.5px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s}
+.pbtn:hover{transform:translateY(-2px);background:rgba(91,144,214,.14)}
+.pbtn.next{background:var(--grad);border:none;color:#fff}
+.pbtn:disabled{opacity:.35;cursor:default;transform:none}
+.pcount{color:var(--muted);font-size:13.5px}
+.cta-end{position:relative;z-index:1;text-align:center;max-width:900px;margin:0 auto 60px;padding:0 22px}
+.cta-end .box{background:linear-gradient(135deg,rgba(91,144,214,.14),rgba(198,163,95,.1));border:1px solid var(--line2);border-radius:24px;padding:40px 24px}
+.cta-end h3{font-size:24px;font-weight:900;margin-bottom:8px}
+.cta-end p{color:var(--muted);margin-bottom:20px}
+.cta-end a{background:var(--grad);color:#fff;padding:12px 26px;border-radius:12px;font-weight:700;font-size:15px;display:inline-block}
+.note{position:relative;z-index:1;max-width:900px;margin:0 auto 30px;padding:0 22px;color:var(--muted);font-size:12.5px;text-align:center}
+@media(max-width:820px){.layout{grid-template-columns:1fr}.toc{display:none}.mobsel{display:block}.page{padding:24px 18px}.shot{position:static}}
+</style>
+</head>
+<body>
+<div class="aura"><span></span><span></span></div>
+<div id="bar"></div>
+
+<header><div class="nav">
+  <div class="logo"><div class="m">⚖️</div><div>לקסקור<small>מדריך שימוש</small></div></div>
+  <a class="back" href="index.html">→ חזרה לאתר</a>
+</div></header>
+
+<div class="hero">
+  <div class="eb">— מדריך אינטראקטיבי · עמוד אחר עמוד · עם קריינות קולית</div>
+  <h1>איך עובד כל דבר בלקסקור</h1>
+  <p>מההתקנה ועד הפרט הקטן ביותר. בכל עמוד יש הסבר, צילום מסך ממחיש וכפתור להשמעת ההסבר בקול.</p>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc"><h4>תוכן העניינים</h4></nav>
+  <div class="main">
+    <div class="mobsel"><select id="msel" onchange="show(+this.value)"></select></div>
+    <div id="pageHost"></div>
+    <div class="pager">
+      <button class="pbtn prev" id="prev" onclick="show(cur-1)">→ הקודם</button>
+      <span class="pcount" id="count"></span>
+      <button class="pbtn next" id="next" onclick="show(cur+1)">הבא ←</button>
+    </div>
+  </div>
+</div>
+
+<p class="note">💡 ההסבר הקולי משתמש בקריינות המובנית של הדפדפן (עברית). אם לא נשמע קול — ודאו שיש במחשב קול עברי מותקן, או שהדפדפן תומך.</p>
+
+<div class="cta-end"><div class="box">
+  <h3>רוצים ליווי אישי בהטמעה?</h3>
+  <p>נעבור על הכול יחד על תיק אמיתי — בלי התחייבות.</p>
+  <a href="index.html#contact">קבעו הדגמה →</a>
+</div></div>
+
+<script>
+/* ===== helper mock builders ===== */
+function shell(addr,title,pill,rowsHtml){return `<div class="shot"><div class="sbar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="ad">${addr}</span></div><div class="sbody"><div class="sh4">${title}${pill?`<span class="pill">${pill}</span>`:''}</div>${rowsHtml}</div></div>`;}
+function row(ic,txt,tag,cls,hl){return `<div class="row${hl?' hl':''}"><span class="ic">${ic}</span> ${txt} ${tag?`<span class="tag ${cls||'ok'}">${tag}</span>`:''}</div>`;}
+
+const PAGES=[
+{t:'ברוכים הבאים למדריך',b:'מבוא',
+ n:'ברוכים הבאים למדריך השימוש של לקסקור. לקסקור היא מערכת ההפעלה של משרד עורכי דין למיסוי ומקרקעין. היא מרכזת במקום אחד את כל מה שהמשרד עושה: תיקים, לקוחות, מועדי חובה, מסמכים, טפסים ממשלתיים, חתימות דיגיטליות, דואר אלקטרוני ופורטל לקוחות. במדריך הזה נעבור שלב אחר שלב על כל מודול, מההתקנה ועד הפרט הקטן ביותר. בכל עמוד תמצאו הסבר כתוב, צילום מסך שממחיש, וכפתור שמקריא לכם את ההסבר בקול. אפשר לדפדף עם כפתורי הבא והקודם, או לבחור נושא מהתפריט בצד.',
+ body:`<p>לקסקור מרכזת את כל המשרד במערכת אחת, ומחליפה מגירה שלמה של כלים נפרדים.</p><h3>מה נלמד במדריך</h3><ul><li><b>התקנה והגדרה</b> — מאפס ועד מערכת עובדת.</li><li><b>עבודה שוטפת</b> — לקוחות, תיקים, מסמכים ומועדים.</li><li><b>הכלים המתקדמים</b> — תוספים, חתימות, סוכן מייל ופורטל.</li></ul><div class="tip"><b>טיפ:</b> אפשר ללחוץ ״השמע הסבר״ בכל עמוד ולהאזין תוך כדי עבודה.</div>`,
+ m:shell('app.lexcore.co.il · דשבורד','בוקר טוב 👋','זמן אמת',
+   `<div class="kpis"><div class="kpi"><div class="n">6</div><div class="l">תיקים פעילים</div></div><div class="kpi"><div class="n">2</div><div class="l">מועדים השבוע</div></div><div class="kpi"><div class="n">₪18K</div><div class="l">לגבייה</div></div></div>`+
+   row('📄','דיווח מש״ח · תיק פרנקל','בעוד 7 ימים','gold')+row('✍️','ייפוי־כוח · לחתימה','נשלח')+row('📨','סוכן המייל תייק 3 צרופות','בוצע'))},
+
+{t:'התקנת התוכנה',b:'התקנה',
+ n:'שלב ראשון: התקנת התוכנה. לקסקור מותקנת מקומית על מחשב המשרד, כך שכל הנתונים נשמרים אצלכם ולא בענן חיצוני. מפעילים את קובץ ההתקנה, והתוכנה מתקינה את עצמה ומוסיפה סמל לשולחן העבודה. כל התהליך אורך דקות ספורות. בהפעלה הראשונה המערכת מכינה בסיס נתונים ריק ומוכנה לשימוש.',
+ body:`<p>לקסקור מותקנת <b>מקומית</b> על מחשב המשרד. הנתונים נשמרים אצלכם.</p><h3>שלב אחר שלב</h3><ol><li>מורידים ומפעילים את קובץ ההתקנה <b>CaseFlow Setup</b>.</li><li>מאשרים את ההתקנה — נוצר סמל בשולחן העבודה.</li><li>ההתקנה מכינה בסיס נתונים מקומי ומפעילה את השרת ברקע.</li></ol><div class="tip"><b>טיפ:</b> אין צורך בחיבור אינטרנט קבוע — הליבה עובדת מקומית.</div>`,
+ m:shell('CaseFlow Setup 1.0','אשף התקנה','',
+   row('⬇️','הורדת קבצים','100%')+row('⚙️','התקנת התוכנה',' ',' ',true)+row('🗄️','הכנת בסיס נתונים','ממתין','gold')+`<div class="btnm">התקן</div>`)},
+
+{t:'התחברות והגדרת המשרד',b:'הגדרה',
+ n:'לאחר ההתקנה, מתחברים למערכת עם שם משתמש וסיסמה. הסיסמה נשמרת מוצפנת ולא ניתנת לשחזור על ידי איש. עכשיו נכנסים למסך ההגדרות וממלאים את פרטי המשרד: שם, כתובת, טלפון ולוגו. הלוגו חשוב במיוחד, כי הוא יופיע על המסמכים שתפיקו, על הקבלות, ועל דף החתימה שהלקוח רואה כשהוא חותם מרחוק.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>מתחברים עם <b>שם משתמש וסיסמה</b> (מוצפנת ב־bcrypt).</li><li>נכנסים ל<b>הגדרות → פרטי משרד</b>.</li><li>ממלאים שם, כתובת, טלפון, ומעלים <b>לוגו</b>.</li></ol><p>הלוגו יופיע על מסמכים, קבלות ודף החתימה של הלקוח.</p><div class="tip"><b>טיפ:</b> העלו לוגו איכותי — הוא מייצג את המשרד מול הלקוח בדף החתימה.</div>`,
+ m:shell('הגדרות · פרטי משרד','פרטי המשרד','',
+   `<div class="fld"><div class="f hot"><span style="font-size:9px;color:#889">שם המשרד</span><br><b>משרד עו״ד ______</b></div><div class="f"><span style="font-size:9px;color:#889">טלפון</span><br><b>02-5954954</b></div><div class="f"><span style="font-size:9px;color:#889">לוגו</span><br><b>logo.png ✓</b></div></div><div class="btnm">שמור הגדרות</div>`)},
+
+{t:'חיבור מייל, WhatsApp והרשאות',b:'הגדרה',
+ n:'עכשיו מחברים את הכלים החיצוניים. מחברים את תיבת הדואר של המשרד דרך שרתי איי־מאפ ואס־אם־טי־פי, כדי לקרוא ולשלוח מיילים מתוך המערכת. מחברים וואטסאפ בסריקת קוד קיו־אר חד פעמית. ולבסוף מגדירים משתמשים והרשאות: לכל עובד, בין אם זו המזכירות, עורך הדין או המנהל, קובעים בדיוק מה מותר לו לראות ולערוך. כך סודיות הלקוח נשמרת אוטומטית.',
+ body:`<h3>מה מחברים</h3><ul><li><b>מייל</b> — שרתי IMAP ו־SMTP לקריאה ושליחה.</li><li><b>WhatsApp</b> — סריקת קוד QR חד־פעמית.</li><li><b>סורק</b> — כדי שסריקות יתויקו ישר לתיקים.</li></ul><h3>הרשאות משתמשים</h3><p>לכל מטפל (מזכירות / עו״ד / מנהל) קובעים מה מותר לו לראות ולערוך.</p><div class="tip"><b>טיפ:</b> הגדירו הרשאות כבר בהתחלה — זו שכבת הגנה ראשונה על סודיות הלקוח.</div>`,
+ m:shell('הגדרות · חיבורים','חיבורים והרשאות','',
+   row('✉️','תיבת מייל · IMAP/SMTP','מחובר')+row('💬','WhatsApp','סרוק QR','gold')+row('👥','משתמשים והרשאות','3 פעילים'))},
+
+{t:'סקירת מסך הבית (דשבורד)',b:'עבודה שוטפת',
+ n:'מסך הבית, הדשבורד, הוא נקודת הפתיחה של כל יום. הוא מציג לכם בזמן אמת את התמונה המלאה: כמה תיקים פעילים יש, אילו מועדי חובה מתקרבים, כמה מיילים טופלו, וכמה כסף יש לגבות החודש. מתחת מופיעה רשימת המשימות הדחופות. במקום לחפש מידע בעשרה מקומות, הכול נמצא כאן במסך אחד.',
+ body:`<p>הדשבורד מרכז את כל מה שחשוב — במסך אחד, בזמן אמת.</p><h3>מה רואים</h3><ul><li><b>מדדים עליונים</b>: תיקים פעילים, מועדים, מיילים, גבייה.</li><li><b>משימות דחופות</b> עם סטטוס וצבע לפי דחיפות.</li><li><b>לוח התראות חי</b> של פעולות אחרונות.</li></ul><div class="tip"><b>טיפ:</b> התחילו כל בוקר מהדשבורד — הוא מראה בדיוק מה בוער.</div>`,
+ m:shell('דשבורד','מה מחכה לך היום','יום שני',
+   `<div class="kpis"><div class="kpi"><div class="n">37</div><div class="l">תיקים</div></div><div class="kpi"><div class="n">8</div><div class="l">משימות</div></div><div class="kpi"><div class="n">₪94K</div><div class="l">גבייה</div></div></div>`+
+   row('📄','דיווח מש״ח','דחוף','gold',true)+row('🏛️','אישור עירייה לטאבו','בתהליך')+row('✍️','מעקב חתימת קונה','בהמתנה'))},
+
+{t:'יצירת לקוח חדש',b:'לקוחות',
+ n:'ניצור עכשיו לקוח חדש. נכנסים למסך לקוחות ולוחצים לקוח חדש. ממלאים שם, מספר תעודת זהות, טלפון, מייל וכתובת. ברגע שמזינים תעודת זהות, המערכת מאמתת אוטומטית שהמספר תקין, וכך מונעת טעויות שגוררות דחייה של דיווחים מול הרשויות בהמשך. מסמנים אם מדובר ביחיד או בחברה, ושומרים. מעכשיו אפשר לפתוח ללקוח תיקים ולהפיק לו מסמכים.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>מסך <b>לקוחות</b> → <b>״לקוח חדש״</b>.</li><li>ממלאים שם, <b>ת״ז</b> (מאומת אוטומטית), טלפון, מייל, כתובת.</li><li>מסמנים <b>יחיד / חברה</b> ושומרים.</li></ol><div class="tip"><b>טיפ:</b> אימות ה־ת״ז בשלב הזה חוסך דחיות יקרות בהמשך.</div>`,
+ m:shell('לקוחות · כרטיס חדש','לקוח חדש','',
+   `<div class="fld"><div class="f hot"><span style="font-size:9px;color:#889">שם מלא</span><br><b>______</b></div><div class="f hot"><span style="font-size:9px;color:#889">ת״ז — מאומת ✓</span><br><b>••••••••• ✓</b></div><div class="f"><span style="font-size:9px;color:#889">טלפון</span><br><b>05_-_______</b></div></div><div class="btnm">שמור לקוח</div>`)},
+
+{t:'חיפוש, ייבוא וטופס קליטה',b:'לקוחות',
+ n:'ניהול לקוחות הוא לא רק יצירה. אפשר לחפש כל לקוח בשנייה לפי שם, תעודת זהות או טלפון. אם יש לכם רשימת לקוחות קיימת, אפשר לייבא אותה בבת אחת, והמערכת מזהה כפילויות אוטומטית. ויש גם טופס קליטה עצמאי: שולחים ללקוח קישור, הוא ממלא את הפרטים בעצמו מכל מכשיר, והם נכנסים ישר לכרטיס — בלי הקלדה מצדכם.',
+ body:`<h3>כלים</h3><ul><li><b>חיפוש מהיר</b> לפי שם / ת״ז / טלפון.</li><li><b>ייבוא המוני</b> עם זיהוי כפילויות אוטומטי.</li><li><b>טופס קליטה</b> — הלקוח ממלא את פרטיו לבד דרך קישור.</li></ul><div class="tip"><b>טיפ:</b> שלחו טופס קליטה ללקוח חדש עוד לפני הפגישה — תחסכו הקלדה.</div>`,
+ m:shell('לקוחות','חיפוש ורשימה','🔎 ת״ז/שם',
+   row('👤','אברהם · ת״ז מאומתת','3 תיקים')+row('🏢','חברה בע״מ','2 תיקים','gold')+row('🔗','טופס קליטה נשלח','ממתין למילוי'))},
+
+{t:'פתיחת תיק מקרקעין',b:'תיקים',
+ n:'התיק הוא הלב של המערכת. לוחצים תיק חדש ובוחרים את סוג התיק: מכר, העברת בעלות, חכירה מהוונת, דיווח לרשות מקרקעי ישראל, אפוטרופסות ועוד. משייכים לקוח, וממלאים את פרטי הנכס: גוש, חלקה, תת חלקה, סניף טאבו וכתובת. מוסיפים את הצדדים לעסקה — מוכר, קונה ומייצג. ברגע שהזנתם גוש וחלקה, כל שאר המודולים כבר יודעים לשלוף את הנתונים לבד.',
+ body:`<h3>שלב אחר שלב</h3><ol><li><b>״תיק חדש״</b> → בחירת <b>סוג</b> (מכר / העברת בעלות / חכירה / רמ״י…).</li><li>שיוך <b>לקוח</b>.</li><li>מילוי <b>גוש / חלקה / תת־חלקה / סניף טאבו / כתובת</b>.</li><li>הוספת <b>צדדים</b> — מוכר, קונה, מייצג.</li></ol><div class="tip"><b>טיפ:</b> גוש/חלקה מדויקים = מילוי אוטומטי בכל שאר המסכים.</div>`,
+ m:shell('תיק חדש','פרטי תיק ונכס','מכר',
+   `<div class="fld"><div class="f hot"><span style="font-size:9px;color:#889">גוש</span> <b>5423</b></div><div class="f hot"><span style="font-size:9px;color:#889">חלקה / תת</span> <b>71 / 4</b></div><div class="f"><span style="font-size:9px;color:#889">סניף טאבו</span> <b>ירושלים</b></div></div><div class="btnm">פתח תיק</div>`)},
+
+{t:'מסך התיק והלשוניות',b:'תיקים',
+ n:'אחרי שפתחתם תיק, מסך התיק מרכז הכול בעמוד אחד. יש לשוניות: פרטים, שבהם נתוני הנכס והעסקה; צדדים, כל המעורבים; מסמכים, כל הקבצים של התיק; אירועים, שהם הטיימליין וההיסטוריה; כספים, החיובים והתשלומים; ומשימות, מה שצריך לעשות. כל מייל, סריקה או מסמך שמגיע, מתחבר אוטומטית לתיק הנכון.',
+ body:`<h3>הלשוניות בתיק</h3><ul><li><b>פרטים</b> · <b>צדדים</b> · <b>מסמכים</b></li><li><b>אירועים / טיימליין</b> · <b>כספים</b> · <b>משימות</b></li></ul><p>הכול בעמוד אחד — כולל המועד הקרוב והיתרה לגבייה.</p><div class="tip"><b>טיפ:</b> הטיימליין מתעד כל פעולה — נוח לביקורת ולמסירת תיק.</div>`,
+ m:shell('תיק · מכר דירה','מוכר ← קונה','בטאבו',
+   `<div class="kpis"><div class="kpi"><div class="n">2</div><div class="l">צדדים</div></div><div class="kpi"><div class="n">14</div><div class="l">מסמכים</div></div><div class="kpi"><div class="n">₪6.4K</div><div class="l">יתרה</div></div></div>`+
+   row('⏳','מועד הבא: דיווח מש״ח','7 ימים','gold',true)+row('🕘','אירוע אחרון: הוגש 7005','היום'))},
+
+{t:'מנוע מועדי־חובה',b:'אוטומציה',
+ n:'זה אחד הכלים החזקים ביותר. מזינים תאריך אחד — תאריך חתימת החוזה — והמערכת בונה את כל לוח הזמנים של התיק. היא מחשבת אוטומטית את מועד דיווח המס שבח, את מועדי התשלום, את מסירת החזקה ואת רישום הזכויות. החישוב מתחשב בשבתות ובחגים, ואם מועד נופל ביום מנוחה הוא נדחה. כל מועד נכנס ליומן ומתחיל להתריע מראש. כך אף דיווח לא נשכח.',
+ body:`<h3>איך זה עובד</h3><ol><li>מזינים <b>תאריך חתימת החוזה</b>.</li><li>המערכת מחשבת: <b>דיווח מש״ח</b>, תשלומים, מסירה, רישום.</li><li>מתחשב ב<b>שבתות וחגים</b>, ומתריע מראש.</li></ol><div class="tip"><b>טיפ:</b> זהו הביטוח מפני קנסות — המערכת מזכירה לפני כל מועד.</div>`,
+ m:shell('מנוע מועדי־חובה','לוח מהחוזה','מקור: חוזה',
+   row('1','חתימת חוזה','הושלם')+row('2','דיווח מש״ח','+50 יום','gold',true)+row('3','תשלום שני 40%','+60 יום')+row('4','מסירה + הערה','+90 יום'))},
+
+{t:'עוזר המסמכים ותבניות',b:'מסמכים',
+ n:'במקום לכתוב כל חוזה מאפס, המערכת ממלאת את תבניות המשרד שלכם. מעלים פעם אחת את קובצי הוורד של המשרד — חוזה מכר, ייפוי כוח, תצהיר — עם שדות מסומנים כמו שם, תעודת זהות, גוש וחלקה. אחר כך, בתוך התיק, בוחרים תבנית, והמערכת ממלאת את כל השדות אוטומטית מנתוני התיק. רואים תצוגה מקדימה ופותחים לעריכה בוורד או שומרים לתיק.',
+ body:`<h3>הכנה חד־פעמית</h3><ol><li>מעלים תבניות Word עם שדות: <b>{{שם}}, {{ת״ז}}, {{גוש}}, {{חלקה}}</b>.</li></ol><h3>שימוש</h3><ol><li>בוחרים <b>תבנית</b> בתיק.</li><li>המערכת <b>ממלאת אוטומטית</b> את השדות.</li><li>תצוגה מקדימה → פתיחה ב־Word או שמירה לתיק.</li></ol><div class="tip"><b>טיפ:</b> תבניות מדויקות = מסמך מוכן לחתימה כמעט ללא עריכה.</div>`,
+ m:shell('עוזר המסמכים','מסמכים מהתיק','4 מוכנים',
+   row('📄','ייפוי־כוח נוטריוני','מולא ✓')+row('📄','תצהיר מוכר','מולא ✓','gold',true)+row('📝','מזכר לתיק','נוצר'))},
+
+{t:'בדיקת ניגוד־עניינים',b:'מסמכים',
+ n:'לפני שמפיקים מסמך או פותחים תיק, המערכת מריצה בדיקת ניגוד עניינים אוטומטית. היא בודקת את הצדדים החדשים מול כל הלקוחות והצדדים הקיימים במשרד, ומתריעה אם יש התנגשות אפשרית. זו הגנה מקצועית חשובה שקורית ברקע, בלי שתצטרכו לזכור לבדוק ידנית.',
+ body:`<p>הגנה מקצועית שקורית אוטומטית ברקע.</p><h3>מה קורה</h3><ul><li>המערכת משווה צדדים חדשים מול <b>לקוחות וצדדים קיימים</b>.</li><li>אם יש חשש להתנגשות — מופיעה <b>התראה</b>.</li><li>אתם מחליטים איך להמשיך, עם המידע מולכם.</li></ul><div class="tip"><b>טיפ:</b> הבדיקה רצה אוטומטית — אבל תמיד כדאי לאשר ידנית במקרי גבול.</div>`,
+ m:shell('בדיקת ניגוד־עניינים','סריקה אוטומטית','',
+   row('🔎','סריקת צדדים מול המאגר','הושלם')+row('✅','אין התנגשות','נקי','ok',true)+row('⚠️','בדיקה במקרי גבול','ידני','gold'))},
+
+{t:'מילוי טופס 7005 / מש״ח',b:'טפסים',
+ n:'הצהרת מס שבח היא מהמשימות המייגעות ביותר. בלקסקור, בתוך התיק, בוחרים טופס שבעת אלפים וחמש. המערכת ממלאת על גבי הטופס הרשמי את הגוש, החלקה, פרטי הצדדים, שווי המכירה והתאריכים — הכול מנתוני התיק, בלי הקלדה כפולה. עוברים על הטופס, מוודאים, ומייצאים לפי־די־אף מוכן להגשה. פחות טעויות, פחות דחיות מול הרשות.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>בתיק בוחרים <b>״טופס 7005״</b>.</li><li>המערכת ממלאת <b>גוש/חלקה, צדדים, שווי, תאריכים</b>.</li><li>בודקים ו<b>מייצאים ל־PDF</b> להגשה.</li></ol><div class="tip"><b>טיפ:</b> אין הקלדה כפולה = פחות דחיות ותיקונים מול רשות המיסים.</div>`,
+ m:shell('טופס 7005','הצהרת מש״ח','ממולא',
+   `<div class="fld"><div class="f hot"><span style="font-size:9px;color:#889">גוש/חלקה/תת</span> <b>5423 / 71 / 4</b></div><div class="f hot"><span style="font-size:9px;color:#889">שווי מכירה</span> <b>₪ •••,•••</b></div></div><div class="btnm">ייצא PDF להגשה</div>`)},
+
+{t:'תוסף Word — תיוק מסמכים',b:'תוספים',
+ n:'התוסף לוורד יושב בתוך התוכנה של מיקרוסופט וורד. כשסיימתם לנסח מסמך, פותחים את התוסף מהסרגל, ונפתח חלון תיוק קובץ. מקלידים שם לקוח, והתוסף מחפש ומציג את הלקוחות המתאימים. בוחרים את התיק, בוחרים קטגוריה כמו חוזה או ייפוי כוח, ומסמנים מי המטפלים. מחליטים אם לתייק כוורד או כפי־די־אף, ולוחצים אשר ותייק. המסמך נשמר ישר לתיק הנכון בלי לצאת מוורד.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>בסיום הניסוח — פותחים את התוסף בסרגל Word.</li><li>מקלידים <b>שם לקוח</b> → בוחרים <b>תיק</b>.</li><li>בוחרים <b>קטגוריה</b>, <b>תאריך</b> ו<b>מטפלים</b>.</li><li>מתייקים כ־<b>Word או PDF</b> → ״אשר ותייק״.</li></ol><div class="tip"><b>טיפ:</b> ודאו שלקסקור פתוחה ברקע — התוסף מתחבר לתוכנה המקומית.</div>`,
+ m:`<div class="tpane"><div class="th">📁 תיוק קובץ — CaseFlow</div><div class="tb"><div class="tr"><label>שם מסמך</label><div class="ti">ייפוי־כוח נוטריוני</div></div><div class="tr"><label>שם לקוח</label><div class="ti">אברהם ל.</div></div><div class="tr"><label>תיק</label><div class="ti">5423-71 · מכר דירה ▾</div></div><div class="tr"><label>קטגוריה</label><div class="ti">ייפוי כוח ▾</div></div><div class="tok">אשר ותייק</div></div></div>`},
+
+{t:'תוסף Chrome — טופס 7000',b:'תוספים',
+ n:'תוסף הכרום למס הכנסה נצמד לטופס הממשלתי הפתוח. נכנסים לאתר רשות המיסים ופותחים את טופס דוח מלא שבעת אלפים. התוסף מזהה את הטופס, ובלחיצה על מלא מהתיק, שדות כמו סוג הבעלות, הגוש, החלקה והשיעורים מתמלאים אוטומטית מנתוני התיק. שדות חובה שחסרים מסומנים באדום, וכפתור הבא ננעל עד שהכול תקין — כדי למנוע שליחה שגויה.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>פותחים את טופס <b>7000</b> באתר רשות המיסים.</li><li>לוחצים <b>״מלא מהתיק״</b> — הכול מתמלא לבד.</li><li>שדות חסרים ב<b>אדום</b>; ״הבא״ ננעל עד שתקין.</li></ol><div class="tip"><b>טיפ:</b> התוסף בודק תקינות לפני שליחה — פחות טעויות מול הרשות.</div>`,
+ m:`<div class="shot" style="position:sticky;top:88px"><div class="cbar"><span style="color:#ff5f57">●</span><span style="color:#febc2e">●</span><span style="color:#28c840">●</span><span class="u">🔒 taxes.gov.il · טופס 7000</span></div><div class="cpage"><div class="gov"><div class="gt">דוח מלא — 7000</div><div class="gr"><div class="gf hot"><span class="k">גוש</span><span class="v">5423</span></div><div class="gf hot"><span class="k">חלקה</span><span class="v">71</span></div><div class="gf hot"><span class="k">בעלות</span><span class="v">יחיד</span></div></div></div><div class="pop"><div class="ph"><span class="d">⚖️</span> לקסקור · מילוי</div><div class="pr">גוש/חלקה <b>מולא ✓</b></div><div class="pr">בעלות <b>מולא ✓</b></div><div class="pb">מלא מהתיק</div></div></div></div>`},
+
+{t:'תוסף Chrome — נסח טאבו',b:'תוספים',
+ n:'התוסף השני עובד מול מקרקעין ברשת. מתוך התיק אפשר להזמין נסח טאבו, צו רישום, תקנון או תשריט בית משותף. התוסף שולף את הגוש והחלקה, ממלא את ההזמנה, ואתם רק מאשרים את התשלום. התוצאה חוזרת ומתויקת בתיק אוטומטית. גם אישור עירייה לטאבו נשלף וממולא, ולפעמים נדרש אימות בקוד שנשלח באס אם אס.',
+ body:`<h3>מה אפשר להזמין</h3><ul><li><b>נסח טאבו, צו־רישום, תקנון, תשריט</b> בית־משותף.</li><li><b>אישור עירייה לטאבו</b> — נשלף וממולא אוטומטית.</li></ul><p>אתם רק מאשרים תשלום — התוצאה חוזרת ומתויקת בתיק.</p><div class="tip"><b>טיפ:</b> מזמינים נסח בלי לצאת מהתיק ובלי הקלדה ידנית.</div>`,
+ m:shell('מקרקעין ברשת · תור הזמנות','הזמנות פעילות','חצי־אוטומטי',
+   row('🏛️','נסח טאבו · גוש 5023/88','מוכן לתשלום','gold',true)+row('📄','צו־רישום בית־משותף','התקבל ✓')+row('🏛️','אישור עירייה','קוד SMS'))},
+
+{t:'חתימה בכרטיס חכם',b:'חתימות',
+ n:'עכשיו החתימה הדיגיטלית שלכם. מחברים את הכרטיס החכם או הטוקן של קומסיין למחשב. בתוך התיק פותחים את המסמך ולוחצים חתום דיגיטלית. מזינים את הקוד הסודי של הכרטיס, והמערכת חותמת את הקובץ בפורמט הקביל להגשה בממשקי הטאבו. המסמך החתום נשמר לתיק. אין צורך בתוכנת קומסיין נפרדת — החתימה מובנית בתוך לקסקור.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>מחברים <b>כרטיס חכם / טוקן ComSign</b>.</li><li>פותחים מסמך בתיק → <b>״חתום דיגיטלית״</b>.</li><li>מזינים <b>PIN</b> → הקובץ נחתם בפורמט קביל לטאבו.</li></ol><div class="tip"><b>טיפ:</b> אין צורך בתוכנת ComSign נפרדת — הכול מובנה.</div>`,
+ m:shell('חתימה דיגיטלית · בקשה לרישום.pdf','חתום את המסמך','תעודה מזהה',
+   `<div style="background:#f4f2ec;border-radius:8px;padding:10px;margin-bottom:8px"><div style="border:2px dashed #4a7fb5;border-radius:7px;height:40px;display:grid;place-items:center;color:#1c4f7a;font-size:11px">〜 חתימה דיגיטלית מאובטחת 〜</div></div>`+
+   row('🪪','כרטיס חכם','מזוהה','ok',true)+row('🏛️','קביל להגשה בטאבו','חתום','gold'))},
+
+{t:'חתימה מרחוק',b:'חתימות',
+ n:'ללקוח לא צריך להגיע למשרד. בוחרים מסמך בתיק ולוחצים שלח לחתימה, ומזינים את הנייד או המייל של הלקוח. הלקוח מקבל קישור לדף חתימה ממותג עם הלוגו שלכם, נכנס עם קוד אימות חד פעמי, קורא וחותם באצבע מהטלפון. המסמך חוזר חתום על כל עמוד, עם עמוד ראיות שמפרט מי חתם ומתי. במעקב הסטטוס רואים מי פתח, מי חתם ומי מתעכב.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>בוחרים מסמך → <b>״שלח לחתימה״</b> + נייד/מייל.</li><li>הלקוח נכנס עם <b>קוד־אימות</b> וחותם מהנייד.</li><li>חוזר <b>PDF חתום</b> + עמוד־ראיות, ונשמר לתיק.</li></ol><div class="tip"><b>טיפ:</b> אפשר לשלוח למוכר ולקונה יחד ולעקוב אחרי שניהם במקום אחד.</div>`,
+ m:`<div class="phone"><div class="t"></div><div class="s"><div class="d"><div class="h"></div><div class="l"></div><div class="l s"></div><div class="l"></div></div><div class="sg">✍ חתום כאן</div><div class="btnm" style="margin-top:9px">אישור וחתימה</div></div></div>`},
+
+{t:'פורטל לקוחות',b:'פורטל',
+ n:'פורטל הלקוחות עובד מסביב לשעון. הלקוח מקבל קישור, נכנס עם קוד אימות חד פעמי, ורואה את מצב התיק שלו. הוא יכול להעלות מסמכים, לחתום, ולקבל הודעות. אתם מקבלים התראה על כל פעולה שהוא מבצע. הכול מסונכרן בזמן אמת בין המשרד, הנייד והפורטל — כך שהלקוח מטופל בלי טלפונים חוזרים.',
+ body:`<h3>מה הלקוח מקבל</h3><ul><li>כניסה מאובטחת ב<b>קוד־אימות (OTP)</b>.</li><li>צפייה ב<b>מצב התיק</b>, העלאת מסמכים וחתימה.</li><li><b>הזמנות יומן (ics.)</b> ישירות למייל.</li></ul><div class="tip"><b>טיפ:</b> כל פעולה של הלקוח שולחת לכם התראה — אתם תמיד בתמונה.</div>`,
+ m:`<div class="shot" style="position:sticky;top:88px"><div class="sbar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="ad">portal.lexcore.co.il · תא־אישי</span></div><div class="sbody"><div class="chat"><span class="ci">🌐</span><div class="cb">שלום 👋 הנה התיק שלך · 🔒 מאובטח</div></div><div class="chat out"><span class="ci">💬</span><div class="cb">אפשר לקבל עותק של החוזה?</div></div><div class="chat"><span class="ci">📎</span><div class="cb">הנה החוזה · ממתין לחתימתך: ייפוי־כוח</div></div></div></div>`},
+
+{t:'סוכן המייל האוטונומי',b:'אוטומציה',
+ n:'סוכן המייל מטפל בתיבת הדואר במקומכם. נכנסים למסך סוכן אימייל ומפעילים אותו במתג. הסוכן סורק את התיבה, מזהה לאיזה תיק שייך כל מייל לפי גוש חלקה או שם, ומתייק את הצרופות. למיילים שדורשים מענה הוא מכין טיוטת תשובה מלאה, כולל הקובץ שהתבקש והחתימה. אתם מקבלים דוח יומי, עוברים ומאשרים. הסוכן אף פעם לא שולח שום דבר בלי אישורכם.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>מפעילים במתג במסך <b>״סוכן אימייל״</b> (או ״הרץ עכשיו״).</li><li>הסוכן <b>מתייק צרופות</b> ומזהה תיק לכל מייל.</li><li>מכין <b>טיוטת תשובה</b> — אתם מאשרים ושולחים.</li></ol><div class="tip"><b>טיפ:</b> אתם המאשר האחרון — אפשר לכבות את הסוכן בכל רגע.</div>`,
+ m:`<div class="shot" style="position:sticky;top:88px"><div class="sbar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="ad">סוכן מייל · פעיל</span></div><div class="sbody"><div class="chat"><span class="ci">📩</span><div class="cb"><b>מייל נכנס</b><br>״אפשר את הנסח החתום?״</div></div><div class="chat out"><span class="ci">🤖</span><div class="cb">שויך לגוש 5423/71. הוכנה טיוטה עם הנסח. לשליחה?</div></div><div class="chat"><span class="ci">⏳</span><div class="cb">ממתין לאישורך</div></div></div></div>`},
+
+{t:'סריקות ו־WhatsApp',b:'תקשורת',
+ n:'סורקים מסמך מהסורק של המשרד, בוחרים תיק, והקובץ מתויק אליו. המערכת אף מחלצת אנשי קשר מהמסמך — תעודות זהות וטלפונים — אוטומטית. במקביל, אפשר לשלוח ולקבל הודעות וואטסאפ מול הלקוח ישירות מתוך התיק, וכל ההתכתבות מתועדת כך שכל הצוות רואה אותה. שילוב של מייל, וואטסאפ וסריקות באותו תיק נותן תמונה מלאה של כל התקשורת.',
+ body:`<h3>סריקות חכמות</h3><ul><li>סורקים → בוחרים תיק → <b>הקובץ מתויק</b>.</li><li>המערכת <b>מחלצת אנשי־קשר</b> מהמסמך.</li></ul><h3>WhatsApp</h3><ul><li>שולחים ומקבלים הודעות <b>מתוך התיק</b>, והכול מתועד.</li></ul><div class="tip"><b>טיפ:</b> מייל + WhatsApp + סריקות באותו תיק = תמונת תקשורת מלאה.</div>`,
+ m:shell('סריקות · תיוק אוטומטי','מהסורק אל התיק','',
+   row('🖨️','נסח טאבו · נסרק','תויק','ok',true)+row('🪪','ת״ז מוכר · חולצו פרטים','זוהה','gold')+row('💬','WhatsApp · לקוח','תועד'))},
+
+{t:'קבלות, חשבוניות וגבייה',b:'כספים',
+ n:'ניהול הכספים של כל תיק. במסך קבלות מפיקים קבלה או חשבונית בסגנון חשבונית ירוקה. בוחרים לקוח ותיק, סכום ואופן תשלום — מזומן, העברה, שיק או אשראי — ומפיקים. לכל תיק נשמר מעקב חיובים ותשלומים, כך שתמיד תדעו מי חייב, כמה ומתי. אפשר גם להפיק דוחות גבייה לתמונה כוללת.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>מסך <b>קבלות</b> → הפקת <b>קבלה/חשבונית</b>.</li><li>בוחרים לקוח/תיק, סכום ו<b>אופן תשלום</b>.</li><li>עוקבים אחר <b>יתרות וסטטוס גבייה</b> לכל תיק.</li></ol><div class="tip"><b>טיפ:</b> חברו מועדי תשלום למנוע מועדי־החובה — תזכורות יעלו לבד.</div>`,
+ m:shell('קבלות וחשבוניות','גבייה · תיק מכר','חשבונית־ירוקה',
+   row('🧾','קבלה 1042 · שכ״ט','שולם ₪5,000','ok',true)+row('💵','חשבונית 318 · אגרות','הופקה')+row('⏳','יתרה פתוחה','₪6,400','gold'))},
+
+{t:'יומן, משימות והתראות',b:'ניהול',
+ n:'יוצרים משימה עם כותרת, מועד ורמת עדיפות — רגילה, גבוהה או דחופה — ומשייכים אותה לתיק. ביומן רואים דיונים, פגישות ומועדים אחרונים, ואפשר לשלוח ללקוח הזמנת יומן ישירות למייל. לוח ההתראות החי בדשבורד מרכז את הכול במקום אחד: מועדים, חתימות והעלאות. שום דבר לא נופל בין הכיסאות.',
+ body:`<h3>שלב אחר שלב</h3><ol><li>יוצרים <b>משימה</b> עם מועד ו<b>עדיפות</b>, ומשייכים לתיק.</li><li>ב<b>יומן</b> — דיונים ומועדים; שולחים <b>ics.</b> ללקוח.</li><li><b>לוח־התראות חי</b> מרכז הכול בדשבורד.</li></ol><div class="tip"><b>טיפ:</b> עדיפות ״דחוף״ קופצת לראש הדשבורד עם התראה.</div>`,
+ m:shell('יומן ומשימות','השבוע שלך','תמוז',
+   row('⚑','להגיש דיווח מש״ח','דחוף · היום','gold',true)+row('⚑','אישור עירייה לטאבו','מחר')+row('⚑','מעקב חתימת קונה','בהמתנה'))},
+
+{t:'דשבורד, דוחות, גיבוי ואבטחה',b:'ניהול',
+ n:'לסיום, הכלים שמחזיקים את המשרד יציב. מסך הבוקר טוב מציג בזמן אמת תיקים, מועדים בסיכון, מיילים וכספים. אפשר להפיק דוחות ופלטי נתונים בפורמט וורד וגייסון. יש גיבוי יומי אוטומטי של תבניות ונתונים, ואפשרות ייצוא וייבוא מלא. בדיקת הבריאות מנטרת את המערכת ומתריעה מראש על תקלות. ויש הרשאות והפרדה בין משתמשים, ושליטה מרחוק מהנייד.',
+ body:`<h3>דשבורד ודוחות</h3><ul><li>מסך <b>״בוקר טוב״</b> בזמן אמת; דוחות ל־<b>Word / JSON</b>.</li></ul><h3>גיבוי ואבטחה</h3><ul><li><b>גיבוי יומי</b> + ייצוא/ייבוא מלא.</li><li><b>בדיקת־בריאות</b> שמתריעה מראש; <b>הרשאות</b> ושליטה מרחוק.</li></ul><div class="tip"><b>טיפ:</b> הציצו מדי פעם בבדיקת־הבריאות — תופסים בעיות מוקדם.</div>`,
+ m:shell('מערכת · תחזוקה','בריאות וגיבוי','',
+   row('💾','גיבוי יומי אוטומטי','בוצע 02:00','ok',true)+row('🩺','בדיקת־בריאות','תקין')+row('🔐','הרשאות משתמשים','3 תפקידים','gold'))}
+];
+
+/* ===== render ===== */
+const N=PAGES.length;let cur=0;let speaking=false;
+const toc=document.getElementById('toc'),msel=document.getElementById('msel'),host=document.getElementById('pageHost');
+PAGES.forEach((p,i)=>{
+  const a=document.createElement('a');a.href='#'+(i+1);a.innerHTML='<span class="n">'+(i+1)+'</span> '+p.t;a.onclick=(e)=>{e.preventDefault();show(i);};toc.appendChild(a);
+  const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+p.t;msel.appendChild(o);
+});
+function render(i){const p=PAGES[i];host.innerHTML=`<div class="page"><div class="ptop"><span class="pbadge">${p.b} · עמוד ${i+1}/${N}</span><button class="speak" id="spk" onclick="toggleSpeak()">🔊 השמע הסבר</button></div><h2>${p.t}</h2><div class="pgrid"><div class="ptext">${p.body}</div><div>${p.m}</div></div></div>`;}
+function updSpk(){const b=document.getElementById('spk');if(!b)return;b.classList.toggle('playing',speaking);b.textContent=speaking?'⏹ עצור':'🔊 השמע הסבר';}
+function speak(){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(PAGES[cur].n);u.lang='he-IL';u.rate=1;const v=speechSynthesis.getVoices().find(x=>x.lang&&x.lang.toLowerCase().indexOf('he')===0);if(v)u.voice=v;u.onend=()=>{speaking=false;updSpk();};u.onerror=()=>{speaking=false;updSpk();};speechSynthesis.cancel();speechSynthesis.speak(u);speaking=true;updSpk();}
+function toggleSpeak(){if(speaking){speechSynthesis.cancel();speaking=false;}else{speak();}updSpk();}
+function show(i){if(i<0||i>=N)return;if('speechSynthesis'in window)speechSynthesis.cancel();speaking=false;cur=i;render(i);
+  document.querySelectorAll('#toc a').forEach((a,x)=>a.classList.toggle('on',x===i));msel.value=i;
+  document.getElementById('prev').disabled=(i===0);document.getElementById('next').disabled=(i===N-1);
+  document.getElementById('count').textContent='עמוד '+(i+1)+' מתוך '+N;
+  document.getElementById('bar').style.width=((i+1)/N*100)+'%';
+  if(location.hash!=='#'+(i+1))history.replaceState(null,'','#'+(i+1));window.scrollTo({top:0,behavior:'smooth'});}
+if('speechSynthesis'in window){speechSynthesis.onvoiceschanged=()=>{};}
+const h=parseInt(location.hash.replace('#',''));show(!isNaN(h)&&h>=1&&h<=N?h-1:0);
+window.addEventListener('hashchange',()=>{const x=parseInt(location.hash.replace('#',''));if(!isNaN(x)&&x>=1&&x<=N&&x-1!==cur)show(x-1);});
+</script>
+</body>
+</html>
