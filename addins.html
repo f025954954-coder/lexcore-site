@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>תוספים · לקסקור</title>
+<meta name="description" content="תוסף Word ותוספי Chrome של לקסקור — תיוק מסמכים ומילוי אוטומטי של טופס 7000 ונסח טאבו.">
+<link rel="stylesheet" href="styles.css">
+<style>
+.tpane{background:#f2f3f7;border-radius:12px;overflow:hidden;color:#2c3e50;font-size:12px;box-shadow:var(--shadow);max-width:320px;margin:0 auto}
+.tpane .th{background:linear-gradient(135deg,#5b3fa0,#4a2f86);color:#fff;padding:10px 13px;font-weight:600;font-size:13px;display:flex;gap:8px;align-items:center}
+.tpane .tb{padding:13px}
+.tpane .tr{margin-bottom:9px}
+.tpane .tr label{display:block;color:#5b5f6e;font-size:10.5px;margin-bottom:3px}
+.tpane .ti{background:#fff;border:1px solid #d4d8e2;border-radius:6px;padding:7px 9px;font-size:12px;color:#2c3e50}
+.tpane .ttab{display:inline-block;padding:6px 15px;background:#5b3fa0;color:#fff;border-radius:6px;font-weight:600;font-size:11.5px;margin:8px 0}
+.tpane .tsec{font-size:11px;color:#5b3fa0;font-weight:700;margin:9px 0 5px}
+.tpane .thand{border:1px solid #d4d8e2;border-radius:6px;padding:8px;background:#fff}
+.tpane .tchk{display:flex;align-items:center;gap:7px;font-size:11.5px;padding:2px 0;color:#2c3e50}
+.tpane .tchk .bx{width:13px;height:13px;border:1px solid #b9bccb;border-radius:3px;display:inline-grid;place-items:center;font-size:9px}
+.tpane .tchk .bx.on{background:#5b3fa0;border-color:#5b3fa0;color:#fff}
+.tpane .tbtns{display:flex;gap:8px;margin-top:12px}
+.tpane .tbtn{flex:1;padding:9px;border-radius:7px;font-weight:600;font-size:12.5px;text-align:center}
+.tpane .tbtn.ok{background:#5b3fa0;color:#fff}.tpane .tbtn.cancel{background:#e7e9f0;color:#444}
+.tpane .tst{margin-top:9px;text-align:center;font-size:11.5px;color:#15803d}
+.chrome{border:1px solid rgba(0,0,0,.15);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.cbar{background:#dfe3ea;padding:8px 12px;display:flex;gap:7px;align-items:center}
+.cbar .u{flex:1;background:#fff;border-radius:13px;padding:5px 12px;font-size:11px;color:#5a6b7a}
+.cpage{background:#eef1f6;padding:16px;color:#333;position:relative;min-height:170px}
+.gov{background:#fff;border:1px solid #d7dbe5;border-radius:6px;padding:12px}
+.gov .gt{font-size:12px;font-weight:700;color:#123;border-bottom:1px solid #123;padding-bottom:6px;margin-bottom:10px;display:flex;justify-content:space-between}
+.gov .gr{display:flex;gap:6px;margin-bottom:7px}
+.gov .gf{flex:1;border:1px solid #cdd3df;border-radius:5px;padding:5px 7px;font-size:10.5px;background:#fbfcfe}
+.gov .gf .k{font-size:8.5px;color:#889;display:block}.gov .gf .v{font-weight:700;color:#0f766e}
+.gov .gf.hot{border-color:#0d9488;box-shadow:0 0 0 2px rgba(13,148,136,.22);background:#f0fdfa}
+.gov .gf.miss{border-color:#e57373}.gov .gf.miss .v{color:#c0392b}
+.apop{position:absolute;top:14px;left:14px;width:180px;background:#0e262c;border:1px solid var(--line2);border-radius:11px;padding:12px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.apop .ah{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;margin-bottom:9px;color:var(--txt)}
+.apop .ah .d{width:20px;height:20px;border-radius:6px;background:var(--grad);display:grid;place-items:center;font-size:11px;color:#052b27}
+.apop .ar{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--line)}
+.apop .ar b{color:var(--teal2)}
+.apop .ab{margin-top:9px;background:var(--grad);color:#052b27;text-align:center;padding:7px;border-radius:8px;font-size:11.5px;font-weight:700}
+</style>
+</head>
+<body data-page="addins">
+<div class="aura"><span></span><span></span><span></span></div>
+<div class="grid-lines"></div>
+
+<header><div class="wrap"><nav>
+  <a href="index.html" class="logo"><span class="mark"><i class="fas fa-scale-balanced"></i></span><span>לקסקור<small>מערכת ההפעלה של המשרד המשפטי</small></span></a>
+  <div class="nav-links">
+    <a href="index.html" data-page="home">בית</a>
+    <a href="features.html" data-page="features">יכולות</a>
+    <a href="addins.html" data-page="addins">תוספים</a>
+    <a href="screenshots.html" data-page="screens">צילומי מסך</a>
+    <a href="plans.html" data-page="plans">מסלולים</a>
+    <a href="security.html" data-page="security">אבטחה</a>
+    <a href="madrich.html">מדריך</a>
+  </div>
+  <a href="contact.html" class="btn btn-primary"><i class="fas fa-bolt"></i> קבעו הדגמה</a>
+  <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+</nav></div></header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow reveal">תוספי דפדפן ו־Word</div>
+    <h1 class="reveal">הטפסים הממשלתיים? <span class="grad-txt">הם ממלאים את עצמם.</span></h1>
+    <p class="reveal">תוספים חכמים נצמדים לטופס הפתוח וממלאים אותו מנתוני התיק — כדי שלא תקלידו לעולם פרטים שכבר יש לכם במערכת.</p>
+  </div>
+</section>
+
+<section class="sec"><div class="wrap">
+  <!-- Word -->
+  <div class="spot reveal">
+    <div class="spot-txt">
+      <span class="eyebrow">תוסף Microsoft Word</span>
+      <h3>סיימת לנסח? המסמך מתייק לתיק — מתוך Word</h3>
+      <p>התוסף יושב בתוך Word. בסיום הניסוח בוחרים לקוח ותיק, מסמנים מטפלים, והמסמך נשמר אוטומטית לתיק הנכון — Word או PDF — בלי לצאת מהמסמך.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> <b>חיפוש לקוח ותיק</b> מתוך Word</li>
+        <li><i class="fas fa-check"></i> <b>תיוק כ־Word או PDF</b> בלחיצה</li>
+        <li><i class="fas fa-check"></i> <b>קטגוריה ומטפלים</b> — חוזה, ייפוי־כוח, תצהיר…</li>
+        <li><i class="fas fa-check"></i> <b>מתחבר למערכת המקומית</b> — הנתונים לא יוצאים החוצה</li>
+      </ul>
+    </div>
+    <div><div class="tpane">
+      <div class="th">📁 תיוק קובץ — CaseFlow</div>
+      <div class="tb">
+        <div class="tr"><label>שם מסמך</label><div class="ti">ייפוי־כוח נוטריוני</div></div>
+        <div style="display:flex;gap:8px"><div class="tr" style="flex:1"><label>קטגוריה</label><div class="ti">ייפוי כוח ▾</div></div><div class="tr" style="flex:1"><label>תאריך</label><div class="ti">06/07/2026</div></div></div>
+        <div class="ttab">לקוח / תיק</div>
+        <div style="display:flex;gap:8px"><div class="tr" style="flex:1"><label>מספר לקוח</label><div class="ti">1042</div></div><div class="tr" style="flex:1"><label>שם לקוח</label><div class="ti">אברהם ל.</div></div></div>
+        <div class="tr"><label>תיק</label><div class="ti">5423-71 · מכר דירה ▾</div></div>
+        <div class="tsec">מטפלים</div>
+        <div class="thand"><div class="tchk"><span class="bx on">✓</span> מזכירות</div><div class="tchk"><span class="bx"></span> חני</div><div class="tchk"><span class="bx"></span> מנהל</div></div>
+        <div class="tbtns"><div class="tbtn ok">אשר ותייק</div><div class="tbtn cancel">בטל</div></div>
+        <div class="tst">✓ המסמך תויק בתיק בהצלחה</div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Chrome 7000 -->
+  <div class="spot reveal">
+    <div class="spot-txt">
+      <span class="eyebrow">תוסף Chrome · רשות המיסים</span>
+      <h3>טופס 7000 ״דוח מלא״ — ממלא את עצמו</h3>
+      <p>נכנסים לאתר רשות המיסים, והתוסף מזהה את הטופס הפתוח וממלא אותו מנתוני התיק. שדות חסרים מסומנים באדום, וכפתור ״הבא״ ננעל עד שהכול תקין.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> מילוי אוטומטי של <b>סוג בעלות, גוש/חלקה ושיעורים</b></li>
+        <li><i class="fas fa-check"></i> <b>בדיקת תקינות</b> — סימון שדות חסרים לפני שליחה</li>
+        <li><i class="fas fa-check"></i> <b>אפס הקלדה</b> — הכול נשלף מהתיק</li>
+      </ul>
+    </div>
+    <div><div class="chrome">
+      <div class="cbar"><span style="color:#ff5f57">●</span><span style="color:#febc2e">●</span><span style="color:#28c840">●</span><span class="u">🔒 taxes.gov.il · טופס 7000</span></div>
+      <div class="cpage">
+        <div class="gov"><div class="gt"><span>דוח מלא — טופס 7000</span><span>רשות המיסים</span></div>
+          <div class="gr"><div class="gf hot"><span class="k">גוש</span><span class="v">5423</span></div><div class="gf hot"><span class="k">חלקה</span><span class="v">71</span></div><div class="gf hot"><span class="k">סוג בעלות</span><span class="v">יחיד</span></div></div>
+          <div class="gr"><div class="gf hot"><span class="k">שיעור חלק</span><span class="v">1/1</span></div><div class="gf miss"><span class="k">שדה חסר</span><span class="v">חובה</span></div></div>
+        </div>
+        <div class="apop"><div class="ah"><span class="d">⚖️</span> לקסקור · מילוי</div><div class="ar">גוש/חלקה <b>מולא ✓</b></div><div class="ar">סוג בעלות <b>מולא ✓</b></div><div class="ar">שדה חסר <b style="color:var(--gold2)">1 ⚠</b></div><div class="ab">מלא מהתיק</div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Chrome tabu -->
+  <div class="spot reveal">
+    <div class="spot-txt">
+      <span class="eyebrow">תוסף Chrome · מקרקעין ברשת</span>
+      <h3>נסח טאבו ובית־משותף — בלי לצאת מהתיק</h3>
+      <p>במקום להיכנס למערכות הממשלה ולהקליד ידנית, לוחצים כפתור בתוך התיק. המערכת שולפת גוש/חלקה, ממלאת ומזמינה — והתוצאה חוזרת וממתיקת בתיק.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> <b>נסח טאבו, צו־רישום, תקנון ותשריט</b></li>
+        <li><i class="fas fa-check"></i> <b>אישור עירייה לטאבו</b> — נשלף וממולא</li>
+        <li><i class="fas fa-check"></i> <b>אתה רק מאשר תשלום</b> — התוצאה חוזרת לתיק</li>
+      </ul>
+    </div>
+    <div>
+      <div class="appwin"><div class="aw-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="ad">מקרקעין ברשת · תור הזמנות</span></div><div class="aw-body">
+        <aside class="aw-side"><div class="aw-brand"><i>⚖️</i> לקסקור</div><div class="aw-nav on">🏛️ הזמנות</div><div class="aw-nav">📂 תיקים</div></aside>
+        <main class="aw-main"><div class="aw-toolbar"><div class="aw-search">הזמנות פעילות</div><div class="aw-tbtn gold">חצי־אוטומטי</div></div><div class="aw-content">
+          <div class="aw-card"><span class="aw-av">🏛️</span> נסח טאבו · גוש 5023/88 <span class="aw-badge st-pending">מוכן לתשלום</span></div>
+          <div class="aw-card"><span class="aw-av">📄</span> צו־רישום בית־משותף <span class="aw-badge st-active">התקבל ✓</span></div>
+          <div class="aw-card"><span class="aw-av">🏛️</span> אישור עירייה לטאבו <span class="aw-badge st-pending">קוד SMS</span></div>
+          <div class="aw-card"><span class="aw-av">📜</span> תשריט בית־משותף <span class="aw-badge st-active">התקבל ✓</span></div>
+        </div></main>
+      </div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec-sm"><div class="wrap"><div class="cta reveal">
+  <h2>תוספים ש<span class="grad-txt">חוסכים לך שעות</span> בכל תיק</h2>
+  <p>קבעו הדגמה ותראו את הטפסים מתמלאים לבד.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a href="contact.html" class="btn btn-primary"><i class="fas fa-rocket"></i> קבעו הדגמה</a><a href="madrich.html" class="btn btn-ghost"><i class="fas fa-book-open"></i> איך זה עובד</a></div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><a href="index.html" class="logo"><span class="mark"><i class="fas fa-scale-balanced"></i></span><span>לקסקור<small>מערכת ההפעלה של המשרד המשפטי</small></span></a><p>נבנתה בידי עורך דין, לעורכי דין למיסוי ומקרקעין.</p></div>
+    <div class="foot-links">
+      <div class="foot-col"><h5>המוצר</h5><a href="features.html">יכולות</a><a href="addins.html">תוספים</a><a href="screenshots.html">צילומי מסך</a><a href="security.html">אבטחה</a></div>
+      <div class="foot-col"><h5>מידע</h5><a href="plans.html">מסלולים</a><a href="madrich.html">מדריך</a><a href="contact.html">צור קשר</a></div>
+      <div class="foot-col"><h5>יצירת קשר</h5><a href="mailto:l0533151511@gmail.com">אימייל</a><a href="https://wa.me/97225954954" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </div>
+  <div class="copy">© 2026 לקסקור · LexCore · כל הזכויות שמורות</div>
+</div></footer>
+<script src="app.js"></script>
+</body>
+</html>
