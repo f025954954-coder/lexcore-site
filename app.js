@@ -1,4 +1,4 @@
-app.js/* ===== לקסקור — JS משותף לכל העמודים ===== */
+/* ===== לקסקור — JS משותף לכל העמודים ===== */
 (function(){
   // icons
   var IC={'scale-balanced':'⚖️','bolt':'⚡','rocket':'🚀','images':'🖼️','shield-halved':'🛡️','mobile-screen':'📱','check-circle':'✅','plug':'🔌','gauge-high':'📊','users':'👥','folder-open':'📂','hourglass-half':'⏳','envelope':'✉️','envelope-open-text':'📨','calendar-days':'📅','magnifying-glass':'🔎','file-lines':'📄','file-signature':'✍️','coins':'🪙','receipt':'🧾','file-invoice':'🧾','file-invoice-dollar':'💵','file-word':'📝','whatsapp':'💬','chrome':'🌐','print':'🖨️','address-card':'🪪','id-card':'🪪','landmark':'🏛️','building-columns':'🏛️','scroll':'📜','database':'🗄️','user-lock':'🔐','cloud-arrow-down':'☁️','user':'👤','briefcase':'💼','crown':'👑','headset':'🎧','bell':'🔔','layer-group':'📚','circle-play':'▶️','mobile':'📱','book-open':'📖','triangle-exclamation':'⚠️','wand-magic-sparkles':'✨','comment-dots':'💬','robot':'🤖','check':'✓','xmark':'✗','plus':'+','arrow-left':'←','arrow-right':'→','flag':'⚑','star':'★','play':'▶','pause':'⏸','bars':'☰','phone':'📞','clock-rotate-left':'🕘'};
