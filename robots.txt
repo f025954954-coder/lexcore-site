@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://f025954954-coder.github.io/lexcore-site/sitemap.xml
