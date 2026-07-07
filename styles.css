@@ -274,6 +274,21 @@ footer .logo small{color:#8fb3ad}
 .blog-card p{color:var(--muted);font-size:14.5px;flex:1}
 .blog-card .rd{color:var(--teal-d);font-weight:700;font-size:14px;margin-top:14px}
 
+/* ===== animated screencast (moving cursor) ===== */
+.screencast{max-width:940px;margin:0 auto;position:relative}
+.screencast .appwin{position:relative}
+.sc-badge{position:absolute;top:50px;right:16px;z-index:15;background:rgba(220,53,69,.92);color:#fff;font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.sc-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#fff;animation:scblink 1.2s infinite}
+@keyframes scblink{50%{opacity:.25}}
+.sc-cursor{position:absolute;left:50%;top:50%;z-index:30;width:24px;height:24px;pointer-events:none;transition:left 1s cubic-bezier(.45,.05,.25,1),top 1s cubic-bezier(.45,.05,.25,1);filter:drop-shadow(0 2px 3px rgba(0,0,0,.45))}
+.sc-cursor.click{animation:scclick .3s ease}
+@keyframes scclick{40%{transform:scale(.78)}100%{transform:scale(1)}}
+.sc-ripple{position:absolute;z-index:29;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:rgba(13,148,136,.45);pointer-events:none;animation:scripple .55s ease-out forwards}
+@keyframes scripple{from{transform:scale(.2);opacity:.7}to{transform:scale(3.4);opacity:0}}
+.sc-cap{max-width:660px;margin:20px auto 0;text-align:center;color:#334;font-size:16.5px;min-height:26px;font-weight:500}
+#scMain{animation:scfade .45s ease}
+@keyframes scfade{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+
 /* ===== floating chat + FAB ===== */
 .fab{position:fixed;bottom:22px;left:22px;z-index:120;display:flex;flex-direction:column;gap:12px;align-items:center}
 .fab-btn{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:22px;cursor:pointer;border:none;box-shadow:0 10px 26px rgba(15,42,46,.22);transition:transform .2s;position:relative;text-decoration:none}
