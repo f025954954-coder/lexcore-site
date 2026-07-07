@@ -83,6 +83,21 @@
 <script src="app.js"></script>
 <script>
 (function(){
-  var form=document.getElementById('leadForm');
-  // כתובת היעד נבנית בזמן ריצה ואינה מופיעה כטקסט גלוי בעמוד
-  var u=['l05
+  var form = document.getElementById('leadForm');
+  var user = ['l05','1515','11'].join('');
+  var at = String.fromCharCode(64);
+  var dot = String.fromCharCode(46);
+  var dest = user + at + 'gmail' + dot + 'com';
+  form.action = 'https://formsubmit.co/' + dest;
+  form.addEventListener('submit', function(){
+    setTimeout(function(){
+      var ok = document.getElementById('f_ok');
+      if (ok) { ok.style.display = 'block'; }
+      var fields = form.querySelectorAll('input:not([type=hidden]), textarea, select');
+      for (var i = 0; i < fields.length; i++) { fields[i].value = ''; }
+    }, 600);
+  });
+})();
+</script>
+</body>
+</html>
