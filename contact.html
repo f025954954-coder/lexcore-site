@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>צור קשר · לקסקור</title>
-<meta name="description" content="קבעו הדגמה של לקסקור — השאירו פרטים, או דברו איתנו ב־WhatsApp ובאימייל.">
+<meta name="description" content="קבעו הדגמה של לקסקור — השאירו פרטים בטופס ונחזור אליכם, או דברו איתנו ב־WhatsApp.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="contact">
@@ -30,28 +30,33 @@
   <div class="wrap">
     <div class="eyebrow reveal">צור קשר</div>
     <h1 class="reveal">בואו נראה לכם את זה <span class="grad-txt">על תיק אמיתי</span></h1>
-    <p class="reveal">השאירו פרטים ונחזור אליכם לתיאום הדגמה — או דברו איתנו עכשיו ב־WhatsApp או במייל.</p>
+    <p class="reveal">השאירו פרטים בטופס ונחזור אליכם לתיאום הדגמה — או דברו איתנו עכשיו ב־WhatsApp.</p>
     <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px">
       <a href="https://wa.me/97225954954?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%93%D7%92%D7%9E%D7%94%20%D7%A9%D7%9C%20%D7%9C%D7%A7%D7%A1%D7%A7%D7%95%D7%A8" target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff"><i class="fab fa-whatsapp"></i> WhatsApp: 02-5954954</a>
-      <a href="mailto:l0533151511@gmail.com?subject=%D7%91%D7%A7%D7%A9%D7%94%20%D7%9C%D7%94%D7%93%D7%92%D7%9E%D7%94" class="btn btn-ghost"><i class="fas fa-envelope"></i> l0533151511@gmail.com</a>
+      <a href="#leadForm" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> השאירו פרטים</a>
     </div>
   </div>
 </section>
 
 <section class="sec-sm"><div class="wrap">
   <div class="form-box reveal">
-    <h3 style="font-family:'Segoe UI',sans-serif;font-size:20px;margin-bottom:6px">השאירו פרטים ונחזור אליכם</h3>
-    <p style="color:var(--muted);font-size:14px;margin-bottom:22px">מילוי הטופס יפתח אצלכם מייל מוכן לשליחה אלינו עם הפרטים.</p>
-    <form id="leadForm">
-      <div class="form-row"><label>שם מלא</label><input id="f_name" required placeholder="השם שלך"></div>
-      <div class="form-row"><label>שם המשרד</label><input id="f_office" placeholder="שם המשרד (לא חובה)"></div>
-      <div style="display:flex;gap:14px;flex-wrap:wrap"><div class="form-row" style="flex:1;min-width:180px"><label>טלפון</label><input id="f_phone" required placeholder="05_-_______"></div>
-      <div class="form-row" style="flex:1;min-width:180px"><label>אימייל</label><input id="f_email" type="email" placeholder="name@example.com"></div></div>
-      <div class="form-row"><label>מסלול שמעניין אתכם</label><select id="f_plan"><option>לא בטוח — שיציעו לי</option><option>יסוד</option><option>משרד</option><option>פרימיום</option></select></div>
-      <div class="form-row"><label>הודעה</label><textarea id="f_msg" placeholder="ספרו לנו על המשרד ומה חשוב לכם..."></textarea></div>
+    <h3 style="font-family:'Rubik',sans-serif;font-size:20px;margin-bottom:6px">השאירו פרטים ונחזור אליכם</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:22px">מלאו את הפרטים ולחצו שליחה — הפנייה תגיע אלינו ישירות ונחזור אליכם בהקדם.</p>
+    <form id="leadForm" method="POST" target="lead_sink" autocomplete="on">
+      <input type="hidden" name="_subject" value="ליד חדש מאתר לקסקור">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+      <div class="form-row"><label>שם מלא</label><input name="שם" id="f_name" required placeholder="השם שלך"></div>
+      <div class="form-row"><label>שם המשרד</label><input name="משרד" id="f_office" placeholder="שם המשרד (לא חובה)"></div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap"><div class="form-row" style="flex:1;min-width:180px"><label>טלפון</label><input name="טלפון" id="f_phone" required placeholder="05_-_______"></div>
+      <div class="form-row" style="flex:1;min-width:180px"><label>אימייל</label><input name="אימייל" id="f_email" type="email" placeholder="name@example.com"></div></div>
+      <div class="form-row"><label>מסלול שמעניין אתכם</label><select name="מסלול" id="f_plan"><option>לא בטוח — שיציעו לי</option><option>יסוד</option><option>משרד</option><option>פרימיום</option></select></div>
+      <div class="form-row"><label>הודעה</label><textarea name="הודעה" id="f_msg" placeholder="ספרו לנו על המשרד ומה חשוב לכם..."></textarea></div>
       <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> שליחת הפרטים</button>
-      <p id="f_ok" style="display:none;text-align:center;color:var(--teal2);margin-top:14px">✓ נפתח מייל מוכן לשליחה. אם לא נפתח — כתבו לנו ל־l0533151511@gmail.com</p>
+      <p id="f_ok" style="display:none;text-align:center;color:var(--teal-d);font-weight:600;margin-top:14px">✓ הפרטים נשלחו — תודה! נחזור אליכם בהקדם.</p>
     </form>
+    <iframe name="lead_sink" style="display:none" title="שליחה"></iframe>
   </div>
 </div></section>
 
@@ -60,7 +65,7 @@
   <div class="faq">
     <div class="faq-item reveal"><div class="faq-q">כמה זמן אורכת ההדגמה? <i class="fas fa-plus"></i></div><div class="faq-a">כ־20 דקות. נעבור על תיק אמיתי ונראה לכם בדיוק איך זה חוסך זמן במשרד שלכם.</div></div>
     <div class="faq-item reveal"><div class="faq-q">ההדגמה מחייבת? <i class="fas fa-plus"></i></div><div class="faq-a">בכלל לא. ההדגמה חינם וללא התחייבות.</div></div>
-    <div class="faq-item reveal"><div class="faq-q">אפשר לדבר עכשיו? <i class="fas fa-plus"></i></div><div class="faq-a">בטח — לחצו על כפתור ה־WhatsApp למעלה או שלחו מייל, ונחזור אליכם מהר.</div></div>
+    <div class="faq-item reveal"><div class="faq-q">אפשר לדבר עכשיו? <i class="fas fa-plus"></i></div><div class="faq-a">בטח — לחצו על כפתור ה־WhatsApp למעלה או השאירו פרטים בטופס, ונחזור אליכם מהר.</div></div>
   </div>
 </div></section>
 
@@ -70,21 +75,14 @@
     <div class="foot-links">
       <div class="foot-col"><h5>המוצר</h5><a href="features.html">יכולות</a><a href="addins.html">תוספים</a><a href="screenshots.html">צילומי מסך</a><a href="security.html">אבטחה</a></div>
       <div class="foot-col"><h5>מידע</h5><a href="plans.html">מסלולים</a><a href="madrich.html">מדריך</a><a href="contact.html">צור קשר</a></div>
-      <div class="foot-col"><h5>יצירת קשר</h5><a href="mailto:l0533151511@gmail.com">l0533151511@gmail.com</a><a href="https://wa.me/97225954954" target="_blank" rel="noopener">WhatsApp · 02-5954954</a></div>
+      <div class="foot-col"><h5>יצירת קשר</h5><a href="contact.html">השאירו פרטים</a><a href="https://wa.me/97225954954" target="_blank" rel="noopener">WhatsApp · 02-5954954</a></div>
     </div>
   </div>
   <div class="copy">© 2026 לקסקור · LexCore · כל הזכויות שמורות</div>
 </div></footer>
 <script src="app.js"></script>
 <script>
-document.getElementById('leadForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var g=function(id){return (document.getElementById(id).value||'').trim();};
-  var body='שם: '+g('f_name')+'\nמשרד: '+g('f_office')+'\nטלפון: '+g('f_phone')+'\nאימייל: '+g('f_email')+'\nמסלול: '+g('f_plan')+'\n\nהודעה:\n'+g('f_msg');
-  var url='mailto:l0533151511@gmail.com?subject='+encodeURIComponent('ליד חדש מהאתר — '+g('f_name'))+'&body='+encodeURIComponent(body);
-  window.location.href=url;
-  document.getElementById('f_ok').style.display='block';
-});
-</script>
-</body>
-</html>
+(function(){
+  var form=document.getElementById('leadForm');
+  // כתובת היעד נבנית בזמן ריצה ואינה מופיעה כטקסט גלוי בעמוד
+  var u=['l05
