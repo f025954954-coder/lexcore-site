@@ -18,7 +18,7 @@
 
   // ===== chat widget =====
   var WA='https://wa.me/97225954954?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%95%D7%93%20%D7%A2%D7%9C%20%D7%9C%D7%A7%D7%A1%D7%A7%D7%95%D7%A8';
-  var MAIL='mailto:l0533151511@gmail.com?subject=%D7%91%D7%A7%D7%A9%D7%94%20%D7%9C%D7%94%D7%93%D7%92%D7%9E%D7%94';
+  var MAIL='contact.html';
   var CHIPS=['מה זה לקסקור?','מה המחיר?','אילו תוספים יש?','חתימה דיגיטלית','מנוע מועדי־חובה','קבעו הדגמה'];
   var INTENTS=[
    {k:['מה זה','מה זו','מהי','מה המערכת','על מה','להסביר','מה אתם','לקסקור','מה עושה'],a:'לקסקור היא מערכת ההפעלה של משרד עורכי דין למיסוי ומקרקעין — מרכזת תיקים, לקוחות, מועדי־חובה, מסמכים, טפסים, חתימות, מייל ופורטל לקוחות במקום אחד, עם אוטומציה שעושה את העבודה השחורה לבד.',c:['אילו תוספים יש?','מנוע מועדי־חובה','מה המחיר?']},
@@ -40,7 +40,7 @@
   var chatInit=false;
   function buildChat(){
     var fab=document.createElement('div');fab.className='fab';fab.id='fab';
-    fab.innerHTML='<a class="fab-btn mail" href="'+MAIL+'" title="אימייל"><span class="fab-lbl">שלחו אימייל</span>✉️</a>'+
+    fab.innerHTML='<a class="fab-btn mail" href="'+MAIL+'" title="השאירו פרטים"><span class="fab-lbl">השאירו פרטים</span>✉️</a>'+
       '<a class="fab-btn wa" href="'+WA+'" target="_blank" rel="noopener" title="WhatsApp"><span class="fab-lbl">דברו איתנו ב־WhatsApp</span>💬</a>'+
       '<button class="fab-btn ai" title="עוזר AI"><span class="fab-lbl">שאלו את העוזר החכם</span>🤖</button>';
     document.body.appendChild(fab);
@@ -53,7 +53,7 @@
     document.getElementById('cwInput').addEventListener('keydown',function(e){if(e.key==='Enter')send();});
   }
   function addMsg(t,c){var b=document.getElementById('cwBody');var d=document.createElement('div');d.className='cb-msg '+c;d.textContent=t;b.appendChild(d);b.scrollTop=b.scrollHeight;}
-  function addActions(){var b=document.getElementById('cwBody');var w=document.createElement('div');w.className='cb-actions';w.innerHTML='<a class="cb-act wa" href="'+WA+'" target="_blank" rel="noopener">💬 נציג ב־WhatsApp</a><a class="cb-act mail" href="'+MAIL+'">✉️ אימייל</a>';b.appendChild(w);b.scrollTop=b.scrollHeight;}
+  function addActions(){var b=document.getElementById('cwBody');var w=document.createElement('div');w.className='cb-actions';w.innerHTML='<a class="cb-act wa" href="'+WA+'" target="_blank" rel="noopener">💬 נציג ב־WhatsApp</a><a class="cb-act mail" href="'+MAIL+'">✉️ השאירו פרטים</a>';b.appendChild(w);b.scrollTop=b.scrollHeight;}
   function chips(list){var ch=document.getElementById('cwChips');ch.innerHTML='';(list&&list.length?list:CHIPS).forEach(function(c){var s=document.createElement('span');s.className='cw-chip';s.textContent=c;s.onclick=function(){addMsg(c,'me');respond(c);};ch.appendChild(s);});}
   function respond(q){var r=botAnswer(q);var b=document.getElementById('cwBody');var ty=document.createElement('div');ty.className='cb-typing';ty.innerHTML='<span></span><span></span><span></span>';b.appendChild(ty);b.scrollTop=b.scrollHeight;var d=480+Math.min(850,(r.a?r.a.length:20)*11);setTimeout(function(){ty.remove();if(r.act){addMsg('בכיף! אפשר לתאם הדגמה אישית — בחרו איך נוח לכם:','bot');addActions();}else addMsg(r.a,'bot');chips(r.c);},d);}
   function send(){var i=document.getElementById('cwInput');var v=i.value.trim();if(!v)return;addMsg(v,'me');i.value='';respond(v);}
