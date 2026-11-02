@@ -1,296 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>לקסקור (LexCore) — תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין</title>
-<meta name="description" content="לקסקור (LexCore) — תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין: ניהול תיקים וטאבו, מנוע מועדי־חובה, מילוי טופס 7005/7000 אוטומטי, תוספי Word ו־Chrome, חתימות דיגיטליות, סוכן מייל ופורטל לקוחות — הכול במערכת אחת.">
-<meta name="keywords" content="לקסקור, LexCore, תוכנה לעורכי דין, תוכנה לניהול משרד עורכי דין, תוכנה לעורך דין מקרקעין, תוכנה למיסוי מקרקעין, ניהול תיקים משפטיים, תוכנת טאבו, טופס 7005, מנוע מועדי חובה, CaseFlow">
-<meta name="author" content="לקסקור · LexCore">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#0d9488">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>לקסקור | תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין</title>
+<meta name="description" content="תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין: תיקים, נסח וטאבו, מועדי חובה, חתימה דיגיטלית, דואר, פורטל לקוח ועוזר בשם חיים. נבנתה בתוך משרד ועובדת בו כל יום.">
 <link rel="canonical" href="https://f025954954-coder.github.io/lexcore-site/">
+<meta name="theme-color" content="#0f5a50">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="לקסקור · LexCore">
 <meta property="og:locale" content="he_IL">
-<meta property="og:title" content="לקסקור (LexCore) — תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין">
-<meta property="og:description" content="מערכת אחת לניהול משרד עורכי דין למיסוי ומקרקעין: תיקים, טאבו, מנוע מועדי־חובה, מילוי טפסים אוטומטי, חתימות דיגיטליות, סוכן מייל ופורטל לקוחות.">
+<meta property="og:site_name" content="לקסקור">
+<meta property="og:title" content="לקסקור | תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין">
+<meta property="og:description" content="תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין: תיקים, נסח וטאבו, מועדי חובה, חתימה דיגיטלית, דואר, פורטל לקוח ועוזר בשם חיים. נבנתה בתוך משרד ועובדת בו כל יום.">
 <meta property="og:url" content="https://f025954954-coder.github.io/lexcore-site/">
+<meta property="og:image" content="https://f025954954-coder.github.io/lexcore-site/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="לקסקור (LexCore) — תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין">
-<meta name="twitter:description" content="מערכת אחת לניהול משרד עו״ד למיסוי ומקרקעין: תיקים, טאבו, מועדי־חובה, טפסים אוטומטיים, חתימות ופורטל לקוחות.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f5a50'/%3E%3Cpath d='M20 7v15h-9' fill='none' stroke='%23fff' stroke-width='4'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "@id":"https://f025954954-coder.github.io/lexcore-site/#org",
-      "name":"לקסקור",
-      "alternateName":["LexCore","CaseFlow","לקסקור מערכת ניהול משרד"],
-      "url":"https://f025954954-coder.github.io/lexcore-site/",
-      "description":"תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין."
-    },
-    {
-      "@type":"WebSite",
-      "@id":"https://f025954954-coder.github.io/lexcore-site/#website",
-      "url":"https://f025954954-coder.github.io/lexcore-site/",
-      "name":"לקסקור · LexCore",
-      "inLanguage":"he",
-      "publisher":{"@id":"https://f025954954-coder.github.io/lexcore-site/#org"}
-    },
-    {
-      "@type":"SoftwareApplication",
-      "name":"לקסקור (LexCore)",
-      "alternateName":"CaseFlow",
-      "applicationCategory":"BusinessApplication",
-      "applicationSubCategory":"Legal Practice Management Software",
-      "operatingSystem":"Windows",
-      "inLanguage":"he",
-      "url":"https://f025954954-coder.github.io/lexcore-site/",
-      "description":"תוכנה לניהול משרד עורכי דין המתמחה במיסוי ומקרקעין: ניהול תיקים וטאבו (גוש/חלקה), מנוע מועדי־חובה, מילוי אוטומטי של טופס 7005/7000, תוספי Word ו־Chrome, חתימה דיגיטלית בכרטיס חכם וחתימה מרחוק, סוכן מייל אוטונומי ופורטל לקוחות.",
-      "featureList":["ניהול תיקים ולקוחות","מנוע מועדי־חובה","מילוי טופס 7005/7000 אוטומטי","תוסף Word ותוספי Chrome","חתימה דיגיטלית בכרטיס חכם וחתימה מרחוק","סוכן מייל אוטונומי","פורטל לקוחות","קבלות וחשבוניות"],
-      "offers":{"@type":"Offer","priceCurrency":"ILS","price":"0","description":"הדגמה חינם — מחיר לפי גודל המשרד"},
-      "keywords":"תוכנה לעורכי דין, תוכנה לניהול משרד עורכי דין, תוכנה לעורך דין מקרקעין, תוכנה למיסוי מקרקעין, מערכת לניהול תיקים משפטיים, תוכנת טאבו, טופס 7005, מנוע מועדי חובה, חתימה דיגיטלית לעורכי דין, פורטל לקוחות למשרד עורכי דין, לקסקור, LexCore",
-      "publisher":{"@id":"https://f025954954-coder.github.io/lexcore-site/#org"}
-    },
-    {
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"מהי לקסקור?","acceptedAnswer":{"@type":"Answer","text":"לקסקור (LexCore) היא תוכנה לניהול משרד עורכי דין המתמחה במיסוי ומקרקעין. המערכת מרכזת ניהול תיקים ולקוחות, טאבו (גוש/חלקה), מנוע מועדי־חובה, מילוי אוטומטי של טופס 7005 ו־7000, תוספי Word ו־Chrome, חתימה דיגיטלית, סוכן מייל ופורטל לקוחות — הכול במערכת אחת בעברית."}},
-        {"@type":"Question","name":"האם יש תוכנה לעורכי דין בשם לקסקור?","acceptedAnswer":{"@type":"Answer","text":"כן. לקסקור (LexCore) היא תוכנה ישראלית ייעודית לעורכי דין, המתמחה בתחומי המיסוי והמקרקעין, וזמינה בעברית."}},
-        {"@type":"Question","name":"עבור אילו עורכי דין מיועדת התוכנה לקסקור?","acceptedAnswer":{"@type":"Answer","text":"לקסקור מיועדת לעורכי דין ולמשרדים העוסקים במיסוי מקרקעין, עסקאות נדל״ן, רישום בטאבו וניהול תיקים משפטיים — אך מתאימה לכל משרד עורכי דין המחפש תוכנה לניהול המשרד."}},
-        {"@type":"Question","name":"מה כוללת התוכנה לניהול משרד עורכי דין של לקסקור?","acceptedAnswer":{"@type":"Answer","text":"ניהול תיקים ולקוחות, מנוע מועדי־חובה עם התראות, מילוי אוטומטי של טופס 7005 ו־7000, ניהול טאבו לפי גוש/חלקה, תוסף Word ותוספי Chrome, חתימה דיגיטלית בכרטיס חכם וחתימה מרחוק, סוכן מייל אוטונומי, פורטל לקוחות, וקבלות וחשבוניות."}},
-        {"@type":"Question","name":"האם לקסקור היא מערכת לניהול תיקים משפטיים?","acceptedAnswer":{"@type":"Answer","text":"כן. לקסקור היא מערכת לניהול תיקים משפטיים ולקוחות למשרד עורכי דין, עם דגש על תיקי מיסוי ומקרקעין, ומרכזת מסמכים, מועדים, כספים ותקשורת עם הלקוח במקום אחד."}}
-      ]
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"לקסקור","alternateName":"LexCore","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"he","url":"https://f025954954-coder.github.io/lexcore-site/","description":"תוכנה לניהול משרד עורכי דין למיסוי ומקרקעין."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"מי יכול להשתמש בלקסקור?","acceptedAnswer":{"@type":"Answer","text":"לקסקור נבנתה למשרדים שעוסקים במיסוי ומקרקעין. ניהול הלקוחות, התיקים, הדואר והכספים מתאים גם למשרדים אחרים, אבל רוב הכלים המיוחדים (נסח, טאבו, מש\"ח) נכתבו לעסקאות נדל\"ן."}},{"@type":"Question","name":"איפה נשמרים הנתונים?","acceptedAnswer":{"@type":"Answer","text":"בענן, בשרתים בפרנקפורט. המסמכים נפתחים בקישורים חתומים לזמן קצר, ורק מחשבים שאישרתם יכולים להיכנס למערכת."}},{"@type":"Question","name":"אפשר להביא את התיקים הקיימים?","acceptedAnswer":{"@type":"Answer","text":"כן. יש ייבוא לקוחות ותיקים ממבנה התיקיות של המשרד, ומסמכים אפשר להעלות בכמויות גדולות. אם אתם עובדים עם עודכנית, דברו איתנו על הייבוא משם."}},{"@type":"Question","name":"כמה זה עולה?","acceptedAnswer":{"@type":"Answer","text":"המחיר נקבע לפי גודל המשרד והמסלול, ואנחנו נותנים אותו אחרי שיחה קצרה."}}]}]}</script>
 </head>
-<body data-page="home">
-<div class="aura"><span></span><span></span><span></span></div>
-<div class="grid-lines"></div>
-
-<header><div class="wrap"><nav>
-  <a href="index.html" class="logo"><span class="mark"><i class="fas fa-scale-balanced"></i></span><span>לקסקור<small>מערכת ההפעלה של המשרד המשפטי</small></span></a>
-  <div class="nav-links">
-    <a href="index.html" data-page="home">בית</a>
-    <a href="features.html" data-page="features">יכולות</a>
-    <a href="addins.html" data-page="addins">תוספים</a>
-    <a href="screenshots.html" data-page="screens">צילומי מסך</a>
-    <a href="blog.html" data-page="blog">מאמרים</a>
-    <a href="plans.html" data-page="plans">מסלולים</a>
-    <a href="madrich.html">מדריך</a>
-  </div>
-  <a href="contact.html" class="btn btn-primary"><i class="fas fa-bolt"></i> קבעו הדגמה</a>
-  <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+<body>
+<header class="top"><div class="wrap"><nav aria-label="ראשי">
+<a class="brand" href="index.html">לקסקור<span>LexCore</span></a>
+<div class="links"><a href="features.html">יכולות</a><a href="screenshots.html">מסכים</a><a href="addins.html">תוספים</a><a href="security.html">אבטחה</a><a href="plans.html">מסלולים</a><a href="madrich.html">מדריך</a><a href="blog.html">מאמרים</a></div>
+<button class="menu-btn" type="button" aria-expanded="false">תפריט</button>
+<a class="btn" href="contact.html">הדגמה</a>
 </nav></div></header>
+<main>
 
-<!-- HERO -->
-<section class="page-hero">
-  <div class="wrap">
-    <div class="eyebrow reveal">נבנתה בידי עורך דין למיסוי ומקרקעין</div>
-    <h1 class="reveal">המשרד שעובד<br><span class="grad-txt">בזמן שאתה ישן.</span></h1>
-    <p class="reveal">תיקים, מנוע מועדי־חובה, תוספי Word ו־Chrome, חתימות דיגיטליות, סוכן מייל ופורטל לקוחות — הכול במערכת אחת. תפסיק לרדוף אחרי מסמכים. תן למשרד לרוץ לבד.</p>
-    <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px">
-      <a href="contact.html" class="btn btn-primary"><i class="fas fa-rocket"></i> קבלת הדגמה חינם</a>
-      <a href="#demo" class="btn btn-ghost"><i class="fas fa-circle-play"></i> צפו בהדגמה ↓</a>
-    </div>
-  </div>
+<div class="hero"><div class="wrap">
+<h1>נבנתה בתוך משרד מקרקעין. עובדת בו כל יום.</h1>
+<p class="lead">לקסקור מנהלת את העסקה מהטיוטה הראשונה ועד הרישום בטאבו: תיק, נסח, מועדים, חתימות, דואר וכספים, במערכת אחת בעברית.</p>
+<div class="actions"><a class="btn" href="contact.html">לתיאום הדגמה</a><a class="btn line" href="#recording">צפייה בהקלטת מסך</a></div>
+<figure><img class="shot" src="assets/screens/dashboard.webp" alt="לוח המחוונים של לקסקור" width="1600" height="1000"><figcaption>לוח המחוונים, גרסה 1.23. השמות והמספרים בצילום בדויים.</figcaption></figure>
+</div></div>
 
-  <div class="wrap"><div class="tilt reveal" style="max-width:1050px;margin:52px auto 0">
-    <div class="appwin">
-      <div class="aw-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="ad">לקסקור · לוח מחוונים</span></div>
-      <div class="aw-body">
-        <aside class="aw-side">
-          <div class="aw-brand"><i>⚖️</i> לקסקור</div>
-          <div class="aw-nav on">📊 לוח מחוונים</div>
-          <div class="aw-nav">👥 לקוחות</div>
-          <div class="aw-nav">📂 תיקים</div>
-          <div class="aw-nav">📅 יומן</div>
-          <div class="aw-nav">✉️ תיבת דואר</div>
-          <div class="aw-nav">📨 סוכן אימייל</div>
-          <div class="aw-nav">🖨️ סריקות</div>
-          <div class="aw-userbox">מחובר: עו״ד ______<br><span style="opacity:.7">מנהל מערכת</span></div>
-        </aside>
-        <main class="aw-main">
-          <div class="aw-toolbar"><div class="aw-search">🔎 חיפוש תיק / לקוח / גוש־חלקה…</div><div class="aw-tbtn">+ תיק חדש</div><div class="aw-tbtn gold">+ לקוח</div></div>
-          <div class="aw-content">
-            <div class="aw-h">שלום, עו״ד 👋 <span style="font-size:12px;color:#6b7c79;font-weight:500">יום שני · ו׳ בתמוז</span></div>
-            <div class="aw-kpis">
-              <div class="aw-kpi"><div class="n">37</div><div class="l">תיקים פעילים</div></div>
-              <div class="aw-kpi"><div class="n">8</div><div class="l">משימות דחופות</div></div>
-              <div class="aw-kpi"><div class="n">12</div><div class="l">מיילים היום</div></div>
-              <div class="aw-kpi"><div class="n">₪94K</div><div class="l">לגבייה</div></div>
-            </div>
-            <div class="aw-card soon"><span class="aw-av">מ</span> דיווח מש״ח · <span class="case-num">5423-71</span> <span class="aw-badge st-pending">בעוד 7 ימים</span></div>
-            <div class="aw-card"><span class="aw-av">ד</span> ייפוי־כוח · ממתין לחתימת לקוח <span class="aw-badge st-active">נשלח</span></div>
-            <div class="aw-card"><span class="aw-av">א</span> אישור עירייה לטאבו · בית שמש <span class="aw-badge b-matter">בתהליך</span></div>
-          </div>
-        </main>
-      </div>
-    </div>
-  </div></div>
-</section>
+<section id="recording"><div class="wrap">
+<div class="rec-head"><h2>50 שניות בתוך התוכנה</h2><p>הקלטת מסך אמיתית: פתיחת תיק, שיחה עם חיים, דואר וחתימה. בלי קריינות, ובלי נתונים של לקוחות אמיתיים (הכול הוזן לצורך ההקלטה).</p></div>
+<video class="rec" src="assets/video/lexcore-recording.mp4" poster="assets/video/lexcore-recording.webp" controls preload="none" playsinline></video>
+</div></section>
 
-<!-- TRUST -->
-<div class="wrap" style="text-align:center;padding:48px 0 0;position:relative;z-index:1">
-  <p class="reveal" style="color:var(--muted);font-size:13px;letter-spacing:1px;margin-bottom:20px">מתחבר לכלים שאתם כבר עובדים איתם</p>
-  <div class="reveal" style="display:flex;gap:34px;justify-content:center;flex-wrap:wrap;color:var(--muted);font-weight:700;font-size:15px;opacity:.85">
-    <span><i class="fas fa-file-word"></i> Microsoft Word</span>
-    <span><i class="fab fa-chrome"></i> Chrome</span>
-    <span><i class="fas fa-landmark"></i> טאבו · מקרקעין ברשת</span>
-    <span><i class="fas fa-building-columns"></i> רשות המיסים · 7000/7005</span>
-    <span><i class="fas fa-id-card"></i> ComSign</span>
-    <span><i class="fab fa-whatsapp"></i> WhatsApp</span>
-  </div>
+<section class="rule"><div class="wrap">
+<h2>מסלול של עסקה</h2>
+<p class="lead" style="margin-top:14px">ככה נראה תיק מכר אצלנו במשרד, שלב אחרי שלב. כל התמונות הן צילומי מסך מהתוכנה עצמה.</p>
+<div class="step"><div class="step-text"><span class="no">1</span><h3>פותחים תיק, והנכס כבר בשדות שלו</h3><p>גוש, חלקה, תת-חלקה, צדדים, מטפל וסטטוס. אחרי ששומרים את פרטי הנכס, כל טופס ומסמך בהמשך מושכים אותם מהתיק. לקוח שכבר קיים במערכת מזוהה, וכפילויות אפשר למזג (ואם טעיתם, לבטל את המיזוג). טופס הכרת לקוח נשלח מהתיק למילוי מקוון.</p></div><div><figure><a href="assets/screens/case-crop.webp"><img class="shot" src="assets/screens/case-crop.webp" alt="תיק פתוח, פרטי הנכס והצדדים" loading="lazy"></a></figure></div></div>
+<div class="step"><div class="step-text"><span class="no">2</span><h3>החוזה נכנס: נסח, מועדים, כסף</h3><p>הזמנת נסח ומסמכי בית משותף יוצאת מכפתור בתיק, וסוכן במחשב המשרד עוצר לפני התשלום. המערכת קוראת את החוזה ומציעה מועדי חובה. בדיקת נסח מול חוזה תופסת אי-התאמות, ומשכון על המוכר אפשר לחפש ברשם המשכונות לפי ת"ז.</p></div><div><figure><a href="assets/screens/case-3-crop.webp"><img class="shot" src="assets/screens/case-3-crop.webp" alt="תיק פתוח, חיובים, טופס הכרת לקוח ומסמכים" loading="lazy"></a></figure></div></div>
+<div class="step"><div class="step-text"><span class="no">3</span><h3>מיסוי: מחשבון ליד היד וטופס שמתמלא</h3><p>מחשבון מס רכישה ומע"מ נמצאים בסרגל העליון של כל מסך. תוסף Chrome ממלא את ההצהרה המקוונת של רשות המסים מנתוני התיק, ואת מה שלא נמצא בתיק הוא משאיר לכם.</p></div><div><figure><a href="assets/screens/tax.webp"><img class="shot" src="assets/screens/tax.webp" alt="מחשבון מס רכישה" loading="lazy"></a></figure></div></div>
+<div class="step"><div class="step-text"><span class="no">4</span><h3>חתימה: על המסך, בכרטיס חכם או מרחוק</h3><p>במסך החתימה אפשר לחתום באצבע או בעט, להוסיף חותמת ולשמור לתיק. ComSign חותם בכרטיס חכם וגם מפיק קובץ .signed לאתרי הממשלה. לקוח שלא מגיע למשרד מקבל קישור, מזדהה בקוד חד-פעמי וחותם מהטלפון, וה-PDF החתום חוזר לתיק.</p></div><div><figure><a href="assets/screens/signature.webp"><img class="shot" src="assets/screens/signature.webp" alt="מסך חתימה דיגיטלית עם ייפוי כוח לדוגמה" loading="lazy"></a></figure></div></div>
+<div class="step"><div class="step-text"><span class="no">5</span><h3>טאבו: הערת אזהרה בלי להקליד שוב</h3><p>הבקשה לרישום הערת אזהרה נבנית מהתיק, והמערכת מראה מה חסר לפני שמתחילים. סוכן ההגשה ממלא את הטופס באתר מקרקעין ברשת ועוצר לפני התשלום ולפני ההגשה עצמה: את שתי ההחלטות האלה מקבל אדם.</p></div><div><figure><a href="assets/screens/tabu.webp"><img class="shot" src="assets/screens/tabu.webp" alt="רשימת בקשות לרישום הערת אזהרה לפי סטטוס" loading="lazy"></a></figure></div></div>
+<div class="step"><div class="step-text"><span class="no">6</span><h3>והלקוח? רואה הכול בפורטל, במקום להתקשר</h3><p>כניסה בקישור אישי ובקוד למייל. הלקוח רואה את מצב החשבון ואת המסמכים שבחרתם לשתף, מעלה קבצים וכותב למשרד. אתם רואים מי נכנס ומתי.</p></div><div><figure><a href="assets/screens/portal-client.webp"><img class="shot" src="assets/screens/portal-client.webp" alt="פורטל הלקוח כפי שהוא נראה ללקוח" loading="lazy"></a></figure></div></div>
+</div></section>
+
+<section class="band"><div class="wrap band-grid">
+<div>
+<h2>חיים, העוזר שמכיר את התיקים</h2>
+<p class="lead" style="margin-top:14px">שואלים אותו בעברית רגילה, בכתב או בקול. הוא קורא את מה שיש בתיק, מכין טיוטות ופותח משימות.</p>
+<ul>
+<li>"מה חסר בתיק לפני הדיווח?" תשובה מתוך המסמכים עצמם.</li>
+<li>משווה נסח חדש לקודם ומתריע כשמשהו השתנה.</li>
+<li>מזהה במייל הבטחה שנתתם ללקוח ומציע לפתוח עליה משימה.</li>
+<li>שולח ללקוח רשימת מסמכים לפי סוג התיק.</li>
+<li>מייל לא יוצא החוצה בלי אישור מפורש שלכם.</li>
+</ul>
 </div>
+<figure><a href="assets/screens/ai.webp"><img class="shot" src="assets/screens/ai.webp" alt="צ׳אט עם חיים על תיק מכר" loading="lazy"></a><figcaption>השיחה בצילום היא שיחת דוגמה.</figcaption></figure>
+</div></section>
 
-<!-- PROBLEM/SOLUTION -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">למה לקסקור</span>
-      <h2>המשרד שלך מגיע לקו הסיום <span class="grad-txt">ראשון.</span></h2>
-      <p>כל שעה שאתה מבזבז על עבודה שחורה היא שעה שלא חוזרת. לקסקור לוקח את המטלות שגוזלות לך את היום — ועושה אותן לבד.</p>
-    </div>
-    <div class="split">
-      <div class="panel bad reveal"><h3><i class="fas fa-triangle-exclamation"></i> בלי לקסקור</h3><ul>
-        <li><i class="fas fa-xmark"></i> מילוי ידני של טופס 7000/7005 שוב ושוב, עם טעויות</li>
-        <li><i class="fas fa-xmark"></i> מועדי־חובה שנשכחים בין החוזה ליומן</li>
-        <li><i class="fas fa-xmark"></i> מסמכים מפוזרים בין וורד, מייל, סורק ותיקיות</li>
-        <li><i class="fas fa-xmark"></i> מרדף אחרי חתימות והזמנת נסחים ידנית</li>
-      </ul></div>
-      <div class="panel good reveal"><h3><i class="fas fa-wand-magic-sparkles"></i> עם לקסקור</h3><ul>
-        <li><i class="fas fa-check"></i> תוסף Chrome ממלא את טופס 7000 לבד מהתיק</li>
-        <li><i class="fas fa-check"></i> מנוע מועדי־חובה בונה לוח־זמנים מהחוזה בשנייה</li>
-        <li><i class="fas fa-check"></i> כל מסמך, מייל וסריקה מתייקים לתיק אוטומטית</li>
-        <li><i class="fas fa-check"></i> חתימה בכרטיס חכם + הזמנת נסח בתוך התיק</li>
-      </ul></div>
-    </div>
-  </div>
-</section>
+<section><div class="wrap">
+<h2>סרטונים קצרים</h2>
+<p class="lead" style="margin-top:14px">חמישה סרטונים של 20 שניות, בפורמט סטורי. אפשר לשלוח אותם לקולגה.</p>
+<div class="stories"><figure><video src="assets/video/story-1.mp4" poster="assets/video/story-1.webp" controls preload="none" playsinline></video><figcaption>כל התוכנה</figcaption></figure><figure><video src="assets/video/story-2.mp4" poster="assets/video/story-2.webp" controls preload="none" playsinline></video><figcaption>חוזה</figcaption></figure><figure><video src="assets/video/story-3.mp4" poster="assets/video/story-3.webp" controls preload="none" playsinline></video><figcaption>חיים</figcaption></figure><figure><video src="assets/video/story-4.mp4" poster="assets/video/story-4.webp" controls preload="none" playsinline></video><figcaption>חתימה</figcaption></figure><figure><video src="assets/video/story-5.mp4" poster="assets/video/story-5.webp" controls preload="none" playsinline></video><figcaption>טאבו</figcaption></figure></div>
+</div></section>
 
-<!-- ANIMATED DEMO -->
-<section class="sec" id="demo" style="padding-top:20px">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">הדגמה חיה</span>
-      <h2>ככה זה נראה <span class="grad-txt">כשהמשרד עובד לבד</span></h2>
-      <p>הדגמה אינטראקטיבית — הסמן זז, מרחף ולוחץ, והמסכים מתחלפים כמו בהקלטת מסך אמיתית.</p>
-    </div>
-    <div class="screencast reveal" id="sc">
-      <div class="sc-badge">מוקלט חי</div>
-      <div class="appwin">
-        <div class="aw-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="ad" id="scAddr">לקסקור · לוח מחוונים</span></div>
-        <div class="aw-body">
-          <aside class="aw-side">
-            <div class="aw-brand"><i>⚖️</i> לקסקור</div>
-            <div class="aw-nav on" data-sc="dash">📊 לוח מחוונים</div>
-            <div class="aw-nav" data-sc="clients">👥 לקוחות</div>
-            <div class="aw-nav" data-sc="cases">📂 תיקים</div>
-            <div class="aw-nav" data-sc="deadlines">⏳ מועדי־חובה</div>
-            <div class="aw-nav" data-sc="docs">📝 מסמכים</div>
-            <div class="aw-nav" data-sc="form">🧾 טפסים</div>
-            <div class="aw-nav" data-sc="sign">✍️ חתימות</div>
-            <div class="aw-nav" data-sc="portal">🌐 פורטל</div>
-            <div class="aw-nav" data-sc="mail">📨 סוכן מייל</div>
-            <div class="aw-nav" data-sc="finance">🪙 קבלות</div>
-          </aside>
-          <main class="aw-main" id="scMain"></main>
-        </div>
-      </div>
-      <div class="sc-cursor" id="scCursor"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 2 L4 19 L8.5 14.5 L11.5 21 L14 20 L11 13.5 L17.5 13.5 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
-    </div>
-    <div class="sc-cap" id="scCap">לוח המחוונים — כל מה שבוער במסך אחד: תיקים, משימות, מיילים וגבייה.</div>
-    <div style="text-align:center;margin-top:16px"><button class="btn btn-ghost" id="scVoice">🔊 הפעל הסבר קולי</button></div>
-    <p style="text-align:center;color:var(--muted);font-size:12px;margin-top:10px">הסמן זז ולוחץ על כל מודול · ההסבר הקולי יתנגן לאחר שתקליט ותעלה את הקבצים · ללא נתוני לקוחות אמיתיים</p>
-  </div>
-</section>
+<section class="rule"><div class="wrap">
+<h2>גם מהטלפון</h2>
+<p class="lead" style="margin-top:14px">לקסקור מותקנת כאפליקציה בטלפון ובטאבלט, ושולחת התראות גם כשהיא סגורה.</p>
+<div class="phones">
+<img src="assets/screens/m-dashboard.webp" alt="לוח מחוונים בטלפון" loading="lazy">
+<img src="assets/screens/m-cases.webp" alt="רשימת תיקים בטלפון" loading="lazy">
+<img src="assets/screens/m-ai.webp" alt="חיים בטלפון" loading="lazy">
+<img src="assets/screens/m-portal.webp" alt="פורטל הלקוח בטלפון" loading="lazy">
+</div>
+</div></section>
 
-<!-- FEATURES PREVIEW -->
-<section class="sec" style="padding-top:20px">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">מבט על</span><h2>מערכת אחת. <span class="grad-txt">כל מה שהמשרד עושה.</span></h2><p>הצצה ליכולות המרכזיות — לפירוט מלא עברו לעמוד היכולות.</p></div>
-    <div class="fgrid">
-      <div class="fcard reveal"><div class="fico">📁</div><h3>ניהול תיקים ולקוחות</h3><p>גוש/חלקה/תת־חלקה, טאבו, צדדים, מסמכים וטיימליין — כל תיק בעמוד אחד.</p></div>
-      <div class="fcard reveal"><div class="fico">⏳</div><h3>מנוע מועדי־חובה</h3><p>תאריך אחד מהחוזה → לוח־זמנים מלא עם התראות שלא נותנות למועד ליפול.</p><span class="chip">חילוץ מהחוזה</span></div>
-      <div class="fcard reveal"><div class="fico">🧩</div><h3>תוספי Word ו־Chrome</h3><p>תיוק מ־Word, ומילוי אוטומטי של טופס 7000 ונסח טאבו מתוך הדפדפן.</p><span class="chip">אוטומציה מלאה</span></div>
-      <div class="fcard reveal"><div class="fico">✍️</div><h3>חתימות דיגיטליות</h3><p>חתימה בכרטיס חכם קביל לטאבו, וחתימת לקוח מרחוק מהנייד.</p></div>
-      <div class="fcard reveal"><div class="fico">📨</div><h3>סוכן מייל אוטונומי</h3><p>קורא, מתייק צרופות ומכין תשובות — אתה המאשר האחרון.</p></div>
-      <div class="fcard reveal"><div class="fico">🌐</div><h3>פורטל לקוחות</h3><p>הלקוח נכנס בקוד, רואה תיק, מעלה מסמכים וחותם — 24/7.</p></div>
-    </div>
-    <div style="text-align:center;margin-top:36px" class="reveal"><a href="features.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> לכל היכולות</a></div>
-  </div>
-</section>
+<section class="rule"><div class="narrow">
+<h2>מה נוסף לאחרונה</h2>
+<div class="log">
+<div><time datetime="2026-11-02">נובמבר 2026</time><span>טופס הכרת לקוח מקוון (איסור הלבנת הון), שנשלח מהתיק ללקוח וחוזר חתום.</span></div>
+<div><time datetime="2026-11-02">נובמבר 2026</time><span>מסך הדואר נבנה מחדש כמו Gmail: פתיחה מהירה, שרשורים, מחיקה לאשפה עם ביטול.</span></div>
+<div><time datetime="2026-11-02">נובמבר 2026</time><span>חותמות המשרד ובלאנק חדש על מכתבים. איתור כפילויות לקוחות עם מיזוג הפיך.</span></div>
+<div><time datetime="2026-11-01">נובמבר 2026</time><span>שאלון ובדיקה לפני הפקת מסמך, כדי שפרט חסר יתגלה לפני ההדפסה.</span></div>
+<div><time datetime="2026-11-01">נובמבר 2026</time><span>הפיכת מייל למשימה בלחיצה, ותיוק של כמה סריקות יחד.</span></div>
+<div><time datetime="2026-11-01">נובמבר 2026</time><span>חיים בודק נסח שנכנס לתיק, ומזהה התחייבויות במיילים.</span></div>
+<div><time datetime="2026-10-29">אוקטובר 2026</time><span>שיחות מקבילות עם חיים, קבצים מצורפים, ושיחה שמקושרת לתיק.</span></div>
+</div>
+</div></section>
 
-<!-- STATS -->
-<section class="sec-sm"><div class="wrap"><div class="stats">
-  <div class="stat reveal"><div class="num grad-txt">24/7</div><div class="lbl">פורטל שבו הלקוח חותם ומעלה מסמכים לבד</div></div>
-  <div class="stat reveal"><div class="num gold-txt">+30</div><div class="lbl">יכולות מובנות שעובדות יחד</div></div>
-  <div class="stat reveal"><div class="num grad-txt">0</div><div class="lbl">מועדי־חובה שנשכחים</div></div>
-  <div class="stat reveal"><div class="num gold-txt">1</div><div class="lbl">מערכת במקום מגירת כלים</div></div>
-</div></div></section>
-
-<!-- CTA -->
-<section class="sec"><div class="wrap"><div class="cta reveal">
-  <h2>תן למשרד <span class="grad-txt">לרוץ לבד.</span></h2>
-  <p>קבעו הדגמה אישית ותראו את לקסקור עובדת על תיק אמיתי — בלי התחייבות.</p>
-  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a href="contact.html" class="btn btn-primary"><i class="fas fa-rocket"></i> קבלת הדגמה חינם</a><a href="madrich.html" class="btn btn-ghost"><i class="fas fa-book-open"></i> למדריך המלא</a></div>
-</div></div></section>
-
-<footer><div class="wrap">
-  <div class="foot">
-    <div><a href="index.html" class="logo"><span class="mark"><i class="fas fa-scale-balanced"></i></span><span>לקסקור<small>מערכת ההפעלה של המשרד המשפטי</small></span></a>
-      <p>נבנתה בידי עורך דין, לעורכי דין למיסוי ומקרקעין. פחות ניירת, יותר משפט.</p></div>
-    <div class="foot-links">
-      <div class="foot-col"><h5>המוצר</h5><a href="features.html">יכולות</a><a href="addins.html">תוספים</a><a href="screenshots.html">צילומי מסך</a><a href="security.html">אבטחה</a></div>
-      <div class="foot-col"><h5>מידע</h5><a href="blog.html">מאמרים</a><a href="plans.html">מסלולים</a><a href="madrich.html">מדריך</a><a href="contact.html">צור קשר</a></div>
-      <div class="foot-col"><h5>יצירת קשר</h5><a href="contact.html">השאירו פרטים</a><a href="https://wa.me/97225954954" target="_blank" rel="noopener">WhatsApp</a></div>
-    </div>
-  </div>
-  <div class="copy">© 2026 לקסקור · LexCore · כל הזכויות שמורות</div>
+<section class="rule"><div class="narrow">
+<h2>שאלות שעולות בשיחה הראשונה</h2>
+<div style="margin-top:22px"><details><summary>מי יכול להשתמש בלקסקור?</summary><p>לקסקור נבנתה למשרדים שעוסקים במיסוי ומקרקעין. ניהול הלקוחות, התיקים, הדואר והכספים מתאים גם למשרדים אחרים, אבל רוב הכלים המיוחדים (נסח, טאבו, מש"ח) נכתבו לעסקאות נדל"ן.</p></details><details><summary>איפה נשמרים הנתונים?</summary><p>בענן, בשרתים בפרנקפורט. המסמכים נפתחים בקישורים חתומים לזמן קצר, ורק מחשבים שאישרתם יכולים להיכנס למערכת.</p></details><details><summary>אפשר להביא את התיקים הקיימים?</summary><p>כן. יש ייבוא לקוחות ותיקים ממבנה התיקיות של המשרד, ומסמכים אפשר להעלות בכמויות גדולות. אם אתם עובדים עם עודכנית, דברו איתנו על הייבוא משם.</p></details><details><summary>כמה זה עולה?</summary><p>המחיר נקבע לפי גודל המשרד והמסלול, ואנחנו נותנים אותו אחרי שיחה קצרה.</p></details></div>
+</div></section>
+<section class="cta"><div class="wrap cta-in"><div><h2>רוצים לראות את זה על תיק שלכם?</h2><p>הדגמה של כ-20 דקות, בלי התחייבות. נעבור על עסקה מהסוג שאתם מטפלים בו.</p></div><a class="btn" href="contact.html">לתיאום הדגמה</a></div></section>
+</main>
+<footer class="foot"><div class="wrap foot-in">
+<div>לקסקור: ניהול משרד עורכי דין למיסוי ומקרקעין.<br>© 2026 LexCore</div>
+<div><a href="features.html">יכולות</a> <a href="screenshots.html">מסכים</a> <a href="addins.html">תוספים</a> <a href="security.html">אבטחה</a> <a href="plans.html">מסלולים</a> <a href="madrich.html">מדריך</a> <a href="blog.html">מאמרים</a> <a href="contact.html">צור קשר</a></div>
 </div></footer>
-
 <script src="app.js"></script>
-<script>
-/* animated screencast — full module tour + moving cursor + optional recorded voice */
-(function(){
-  var sc=document.getElementById('sc');if(!sc)return;
-  var cursor=document.getElementById('scCursor'),main=document.getElementById('scMain'),cap=document.getElementById('scCap'),addr=document.getElementById('scAddr'),badge=sc.querySelector('.sc-badge'),vbtn=document.getElementById('scVoice');
-  var navs={};sc.querySelectorAll('.aw-nav').forEach(function(n){navs[n.dataset.sc]=n;});
-  function tb(t,x){return '<div class="aw-toolbar"><div class="aw-search">'+t+'</div>'+(x||'')+'</div>';}
-  var tabs='<div style="display:flex;gap:6px;margin-bottom:11px">';
-  var steps=[
-   {nav:'dash',addr:'לקסקור · לוח מחוונים',cap:'לוח המחוונים — כל מה שבוער במסך אחד: תיקים, משימות, מיילים וגבייה.',audio:'voice/v1.mp3',main:tb('🔎 חיפוש תיק / לקוח / גוש־חלקה…','<div class="aw-tbtn">+ תיק חדש</div><div class="aw-tbtn gold">+ לקוח</div>')+'<div class="aw-content"><div class="aw-kpis"><div class="aw-kpi"><div class="n">37</div><div class="l">תיקים</div></div><div class="aw-kpi"><div class="n">8</div><div class="l">משימות</div></div><div class="aw-kpi"><div class="n">12</div><div class="l">מיילים</div></div><div class="aw-kpi"><div class="n">₪94K</div><div class="l">גבייה</div></div></div><div class="aw-card soon"><span class="aw-av">מ</span> דיווח מש״ח · <span class="case-num">5423-71</span> <span class="aw-badge st-pending">7 ימים</span></div><div class="aw-card"><span class="aw-av">א</span> אישור עירייה לטאבו <span class="aw-badge b-matter">בתהליך</span></div></div>'},
-   {nav:'clients',addr:'לקסקור · לקוחות',cap:'מסך הלקוחות — חיפוש מהיר, אימות ת״ז, וכל התיקים של הלקוח.',audio:'voice/v2.mp3',main:tb('🔎 חיפוש · שם / ת״ז / טלפון','<div class="aw-tbtn gold">+ לקוח</div>')+'<div class="aw-content"><div class="aw-card"><span class="aw-av">א</span> אברהם · ת״ז מאומתת <span class="aw-badge st-active">3 תיקים</span></div><div class="aw-card"><span class="aw-av">ר</span> רבקה · חברה בע״מ <span class="aw-badge b-matter">2 תיקים</span></div><div class="aw-card"><span class="aw-av">מ</span> משה · לקוח חדש <span class="aw-badge st-pending">קליטה</span></div></div>'},
-   {nav:'cases',addr:'לקסקור · תיקים',cap:'מסך התיקים — כל התיקים הפעילים. הסמן לוחץ על תיק כדי להיכנס.',audio:'voice/v3.mp3',main:tb('🔎 חיפוש · גוש/חלקה/לקוח')+'<div class="aw-content"><div class="aw-card scrow"><span class="aw-av">מ</span> מכר דירה · גוש 5423/71 <span class="aw-badge st-active">בטאבו</span></div><div class="aw-card"><span class="aw-av">ה</span> העברת בעלות · גוש 3810/22 <span class="aw-badge st-pending">מש״ח</span></div><div class="aw-card"><span class="aw-av">ח</span> חכירה מהוונת · רמ״י <span class="aw-badge b-matter">בתהליך</span></div></div>'},
-   {sel:'#scMain .scrow',addr:'לקסקור · תיק 5423-71',cap:'נכנסנו לתיק — גוש/חלקה, צדדים, מסמכים ומועדים. לשוניות למעלה.',audio:'voice/v4.mp3',main:tb('מכר דירה · <span class="case-num" style="margin-right:6px">5423-71</span>')+'<div class="aw-content">'+tabs+'<span class="sctab on">פרטים</span><span class="sctab" id="tDocs">מסמכים</span><span class="sctab" id="tFin">כספים</span></div><div class="aw-meta"><div class="m"><span class="k">גוש</span><div class="v">5423</div></div><div class="m"><span class="k">חלקה/תת</span><div class="v">71 / 4</div></div><div class="m"><span class="k">טאבו</span><div class="v">ירושלים</div></div></div><div class="aw-card"><span class="aw-av">👥</span> צדדים · מוכר + קונה <span class="aw-badge b-matter">2</span></div></div>'},
-   {sel:'#scMain #tDocs',cap:'לשונית מסמכים — כל הקבצים של התיק במקום אחד.',audio:'voice/v5.mp3',main:tb('מכר דירה · <span class="case-num" style="margin-right:6px">5423-71</span>')+'<div class="aw-content">'+tabs+'<span class="sctab">פרטים</span><span class="sctab on" id="tDocs">מסמכים</span><span class="sctab" id="tFin">כספים</span></div><div class="aw-card"><span class="aw-av">📄</span> חוזה מכר.docx <span class="aw-badge st-active">חתום</span></div><div class="aw-card"><span class="aw-av">📄</span> נסח טאבו.pdf <span class="aw-badge b-matter">מצורף</span></div><div class="aw-card"><span class="aw-av">📄</span> ייפוי־כוח.pdf <span class="aw-badge st-pending">לחתימה</span></div></div>'},
-   {sel:'#scMain #tFin',cap:'לשונית כספים — חיובים, תשלומים ויתרה פתוחה לתיק.',audio:'voice/v6.mp3',main:tb('מכר דירה · <span class="case-num" style="margin-right:6px">5423-71</span>')+'<div class="aw-content">'+tabs+'<span class="sctab">פרטים</span><span class="sctab" id="tDocs">מסמכים</span><span class="sctab on" id="tFin">כספים</span></div><div class="aw-card"><span class="aw-av">🧾</span> קבלה 1042 · שכ״ט <span class="aw-badge st-active">שולם ₪5,000</span></div><div class="aw-card soon"><span class="aw-av">⏳</span> יתרה פתוחה <span class="aw-badge st-pending">₪6,400</span></div></div>'},
-   {nav:'deadlines',addr:'לקסקור · מנוע מועדי־חובה',cap:'מנוע מועדי־החובה — תאריך אחד מהחוזה, וכל לוח־הזמנים נבנה לבד עם התראות.',audio:'voice/v7.mp3',main:tb('לוח־זמנים שנבנה מהחוזה · 14.05.2026')+'<div class="aw-content"><div class="aw-card"><span class="aw-av">1</span> חתימת חוזה מכר <span class="aw-badge st-active">הושלם</span></div><div class="aw-card soon"><span class="aw-av">2</span> דיווח מש״ח לרשות המיסים <span class="aw-badge st-pending">+50 יום</span></div><div class="aw-card"><span class="aw-av">3</span> תשלום שני · 40% <span class="aw-badge b-matter">+60 יום</span></div><div class="aw-card"><span class="aw-av">4</span> מסירה + רישום הערה <span class="aw-badge b-matter">+90 יום</span></div></div>'},
-   {nav:'docs',addr:'לקסקור · עוזר מסמכים',cap:'עוזר המסמכים — תבניות שממלאות את עצמן מהתיק, כולל בדיקת ניגוד־עניינים.',audio:'voice/v8.mp3',main:tb('מסמכים שנוצרו מהתיק','<div class="aw-tbtn gold">4 מוכנים</div>')+'<div class="aw-content"><div class="aw-card"><span class="aw-av">📄</span> ייפוי־כוח נוטריוני <span class="aw-badge st-active">מולא ✓</span></div><div class="aw-card"><span class="aw-av">📄</span> תצהיר מוכר <span class="aw-badge st-active">מולא ✓</span></div><div class="aw-card"><span class="aw-av">⚠️</span> בדיקת ניגוד־עניינים <span class="aw-badge st-active">נקי ✓</span></div></div>'},
-   {nav:'form',addr:'לקסקור · טופס 7005',cap:'טופס 7005 — הצהרת מש״ח מתמלאת אוטומטית מהתיק. הסמן לוחץ ״ייצא PDF״.',audio:'voice/v9.mp3',main:tb('הצהרת מש״ח · טופס 7005')+'<div class="aw-content"><div class="aw-field hot"><span class="k">גוש / חלקה / תת</span><span class="v">5423 / 71 / 4</span></div><div class="aw-field hot"><span class="k">שם המוכר · ת״ז</span><span class="v">••••••• · •••••••••</span></div><div class="aw-field hot"><span class="k">שווי מכירה · תאריך</span><span class="v">₪ •••,••• · ••/••/••</span></div><div class="aw-primary-btn" id="expBtn">📄 ייצא PDF להגשה</div></div>'},
-   {sel:'#scMain #expBtn',cap:'ה־PDF נוצר — מוכן להגשה לרשות המיסים, בלי הקלדה כפולה.',audio:'voice/v10.mp3',main:tb('הצהרת מש״ח · טופס 7005','<div class="aw-tbtn">הורד PDF</div>')+'<div class="aw-content"><div class="aw-card"><span class="aw-av">📄</span> טופס_7005_5423-71.pdf <span class="aw-badge st-active">נוצר ✓</span></div><div class="aw-primary-btn">✓ מולא אוטומטית · מוכן להגשה</div></div>'},
-   {nav:'sign',addr:'לקסקור · חתימה דיגיטלית',cap:'חתימה בכרטיס חכם בלחיצה — בפורמט הקביל להגשה בטאבו.',audio:'voice/v11.mp3',main:tb('בקשה לרישום.pdf','<div class="aw-tbtn gold">כרטיס חכם ✓</div>')+'<div class="aw-content"><div style="background:#fff;border-radius:11px;padding:14px;margin-bottom:8px;border-right:4px solid var(--teal)"><div style="border:2px dashed #0d9488;border-radius:8px;height:46px;display:grid;place-items:center;color:#0f766e;font-size:12px">〜 חתימה דיגיטלית מאובטחת 〜</div></div><div class="aw-card"><span class="aw-av">🪪</span> תעודה מזהה · כרטיס חכם <span class="aw-badge st-active">מזוהה</span></div><div class="aw-card"><span class="aw-av">🏛️</span> מוכן להגשה בטאבו <span class="aw-badge b-matter">חתום · קביל</span></div></div>'},
-   {nav:'portal',addr:'portal.lexcore.co.il',cap:'פורטל הלקוחות — הלקוח נכנס בקוד־אימות, רואה תיק, מעלה מסמכים וחותם 24/7.',audio:'voice/v12.mp3',main:tb('portal.lexcore.co.il · תא־אישי')+'<div class="aw-content"><div class="aw-card"><span class="aw-av">🌐</span> כניסה בקוד־אימות (OTP) <span class="aw-badge st-active">מאובטח</span></div><div class="aw-card"><span class="aw-av">📎</span> הלקוח העלה: תעודת־זהות <span class="aw-badge b-matter">התקבל</span></div><div class="aw-card soon"><span class="aw-av">✍️</span> ממתין לחתימת הלקוח <span class="aw-badge st-pending">ייפוי־כוח</span></div></div>'},
-   {nav:'mail',addr:'לקסקור · סוכן מייל',cap:'סוכן המייל — קורא, מתייק צרופות לתיק ומכין טיוטות. אתה המאשר האחרון.',audio:'voice/v13.mp3',main:tb('סוכן אימייל · פעיל','<div class="aw-tbtn gold">הרץ עכשיו</div>')+'<div class="aw-content"><div class="aw-card"><span class="aw-av">📩</span> מייל נכנס · ״אפשר נסח חתום?״ <span class="aw-badge b-matter">שויך לתיק</span></div><div class="aw-card"><span class="aw-av">🤖</span> הוכנה טיוטת תשובה + הקובץ <span class="aw-badge st-pending">לאישורך</span></div><div class="aw-card"><span class="aw-av">📨</span> 3 צרופות תויקו לתיקים <span class="aw-badge st-active">בוצע ✓</span></div></div>'},
-   {nav:'finance',addr:'לקסקור · קבלות וחשבוניות',cap:'קבלות וגבייה — הפקה בסגנון חשבונית־ירוקה ומעקב חיובים ותשלומים.',audio:'voice/v14.mp3',main:tb('גבייה · חשבונית־ירוקה')+'<div class="aw-content"><div class="aw-card"><span class="aw-av">🧾</span> קבלה 1042 · שכ״ט <span class="aw-badge st-active">שולם ₪5,000</span></div><div class="aw-card"><span class="aw-av">💵</span> חשבונית 318 · אגרות <span class="aw-badge b-matter">הופקה</span></div><div class="aw-card soon"><span class="aw-av">⏳</span> יתרה פתוחה <span class="aw-badge st-pending">₪6,400</span></div></div>'}
-  ];
-  var i=0,small=window.matchMedia('(max-width:640px)').matches,gen=0,voiceOn=false,curA=null,startedOnce=false;
-  function apply(s){if(s.nav){for(var k in navs)navs[k].classList.toggle('on',k===s.nav);}if(s.main!=null)main.innerHTML=s.main;if(s.addr)addr.textContent=s.addr;if(s.cap)cap.textContent=s.cap;}
-  function place(el){var c=sc.getBoundingClientRect(),r=el.getBoundingClientRect();cursor.style.left=(r.left-c.left+r.width/2)+'px';cursor.style.top=(r.top-c.top+r.height/2)+'px';}
-  function clickFx(){cursor.classList.add('click');var rip=document.createElement('div');rip.className='sc-ripple';rip.style.left=cursor.style.left;rip.style.top=cursor.style.top;sc.appendChild(rip);setTimeout(function(){cursor.classList.remove('click');rip.remove();},520);}
-  function stopA(){if(curA){try{curA.pause();}catch(e){}curA=null;}}
-  function advance(s,g,done){if(voiceOn&&s.audio){stopA();curA=new Audio(s.audio);curA.onended=function(){if(g===gen)done();};curA.onerror=function(){if(g===gen)setTimeout(done,2600);};var p=curA.play();if(p&&p.catch)p.catch(function(){if(g===gen)setTimeout(done,2600);});}else{setTimeout(function(){if(g===gen)done();},2600);}}
-  function tick(g){if(g!==gen)return;var s=steps[i];var next=function(){if(g!==gen)return;i=(i+1)%steps.length;tick(g);};if(small){apply(s);advance(s,g,next);return;}var target=s.nav?navs[s.nav]:document.querySelector(s.sel);if(!target){apply(s);advance(s,g,next);return;}place(target);setTimeout(function(){if(g!==gen)return;clickFx();setTimeout(function(){if(g===gen)apply(s);},170);advance(s,g,next);},1050);}
-  function begin(){gen++;var g=gen;stopA();i=0;apply(steps[0]);if(small){cursor.style.display='none';}else{place(navs['dash']);}setTimeout(function(){tick(g);},small?800:1200);}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!startedOnce){startedOnce=true;begin();}});},{threshold:.2});io.observe(sc);
-  window.addEventListener('load',function(){setTimeout(function(){if(!startedOnce){startedOnce=true;begin();}},900);});
-  if(vbtn){vbtn.addEventListener('click',function(){voiceOn=!voiceOn;vbtn.classList.toggle('on',voiceOn);vbtn.textContent=voiceOn?'🔊 קול פעיל · לחצו לביטול':'🔊 הפעל הסבר קולי';if(badge)badge.classList.toggle('voice',voiceOn);begin();});}
-})();
-</script>
 </body>
 </html>
