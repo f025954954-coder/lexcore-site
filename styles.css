@@ -172,7 +172,7 @@ textarea { min-height: 110px; }
 .foot a, .foot .link-btn { color: var(--soft); margin-inline-end: 15px; display: inline-block; }
 
 /* consent */
-.consent { position: fixed; bottom: 18px; inset-inline-end: 18px; width: min(100% - 36px, 400px); background: var(--white); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 18px 20px; z-index: 40; font-size: 15.5px; line-height: 1.6; animation: soft-in .9s var(--ease) both; }
+.consent { position: fixed; bottom: 18px; inset-inline-start: 18px; width: min(100% - 36px, 400px); background: var(--white); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 18px 20px; z-index: 40; font-size: 15.5px; line-height: 1.6; animation: soft-in .9s var(--ease) both; }
 .consent p { margin: 0 0 12px; }
 .consent-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .consent .btn { padding: 8px 10px; font-size: 15.5px; background: var(--white); color: var(--teal); border-color: var(--teal); }
@@ -190,6 +190,7 @@ textarea { min-height: 110px; }
 @media (min-width: 901px) { .links { display: flex; gap: 22px; } }
 @media (max-width: 900px) {
   body { font-size: 17px; }
+  .consent { bottom: 76px; }
   .menu-btn { display: block; }
   .top nav { flex-wrap: wrap; padding: 10px 0; gap: 10px 12px; }
   .links { display: none; width: 100%; order: 3; flex-direction: column; gap: 10px; padding-bottom: 8px; }
