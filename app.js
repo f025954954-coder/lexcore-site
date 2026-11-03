@@ -1,4 +1,4 @@
-/* סטטיסטיקה: Google Analytics נטען רק אחרי אישור המבקר */
+/* עוגיות: Google Analytics נטען רק אחרי אישור המבקר */
 (function () {
   var KEY = 'lexcoreAnalyticsConsent', ID = 'G-MP6RWXQK18', loaded = false;
   function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
@@ -33,9 +33,9 @@
     b.id = 'consentBox';
     b.className = 'consent';
     b.setAttribute('role', 'region');
-    b.setAttribute('aria-label', 'הסכמה לסטטיסטיקה');
-    b.innerHTML = '<p>אפשר להפעיל Google Analytics, כדי שנדע כמה מבקרים מגיעים ומה הם קוראים? <a href="privacy.html">פרטים</a></p>' +
-      '<div class="consent-actions"><button type="button" class="btn" data-v="yes">כן, אפשר</button><button type="button" class="btn" data-v="no">לא, תודה</button></div>';
+    b.setAttribute('aria-label', 'הסכמה לעוגיות');
+    b.innerHTML = '<svg class="consent-cookie" viewBox="0 0 64 64" aria-hidden="true"><path fill="#e3b778" d="M32 5a27 27 0 1 0 27 27c0-1.6-.1-3.1-.4-4.6a8 8 0 0 1-9.6-7.2 8 8 0 0 1-9.8-9.4A8 8 0 0 1 32.4 5z"/><circle cx="21" cy="24" r="3.6" fill="#7a4a21"/><circle cx="36" cy="33" r="3" fill="#7a4a21"/><circle cx="23" cy="42" r="3.4" fill="#7a4a21"/><circle cx="41" cy="46" r="2.6" fill="#7a4a21"/><circle cx="13" cy="33" r="2.2" fill="#7a4a21"/></svg><div class="consent-body"><p class="consent-title">מה דעתכם על עוגיות?</p><p>העוגיות של Google Analytics עוזרות לנו להבין אילו עמודים מעניינים אנשים. בלי פרסום, והאתר עובד גם בלעדיהן. <a href="privacy.html">פרטים</a></p>' +
+      '<div class="consent-actions"><button type="button" class="btn" data-v="yes">אישור עוגיות</button><button type="button" class="btn" data-v="no">בלי עוגיות</button></div></div>';
     b.addEventListener('click', function (e) { var v = e.target.getAttribute('data-v'); if (v) choose(v); });
     document.body.appendChild(b);
     document.addEventListener('keydown', onKey);
